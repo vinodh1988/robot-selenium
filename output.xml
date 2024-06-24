@@ -1,34 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.11.2 on win32)" generated="2024-06-24T20:34:25.207774" rpa="false" schemaversion="5">
-<suite id="s1" name="Input" source="E:\robot-basics\input.robot">
+<robot generator="Robot 7.0.1 (Python 3.11.2 on win32)" generated="2024-06-24T20:46:20.498846" rpa="false" schemaversion="5">
+<suite id="s1" name="clickLinks" source="E:\robot-basics\clickLinks.robot">
 <test id="s1-t1" name="Testing Selenium Driver" line="6">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-06-24T20:34:25.466028" level="INFO">Opening browser 'Chrome' to base url 'https://google.co.in'.</msg>
-<arg>https://google.co.in</arg>
+<msg time="2024-06-24T20:46:20.789829" level="INFO">Opening browser 'Chrome' to base url 'https://apple.com'.</msg>
+<arg>https://apple.com</arg>
 <arg>Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-06-24T20:34:25.466028" elapsed="3.320728"/>
+<status status="PASS" start="2024-06-24T20:46:20.788837" elapsed="4.408018"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-06-24T20:34:28.788113" level="INFO">Typing text 'prompt engineering' into text field 'name=q'.</msg>
-<arg>name=q</arg>
-<arg>prompt engineering</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-24T20:34:28.788113" elapsed="0.150252"/>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-06-24T20:46:25.198857" level="INFO">Clicking link 'xpath=//*[@id="globalnav-list"]/li[2]/div/div/div[2]/ul/li[1]/a'.</msg>
+<arg>xpath=//*[@id="globalnav-list"]/li[2]/div/div/div[2]/ul/li[1]/a</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-24T20:46:25.197856" elapsed="1.204011"/>
 </kw>
-<kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2024-06-24T20:34:28.939365" level="INFO">Sending key(s) ('RETURN',) to name=q element.</msg>
-<msg time="2024-06-24T20:34:29.246898" level="INFO">Pressing special key RETURN to element.</msg>
-<msg time="2024-06-24T20:34:29.246898" level="INFO">Releasing special key RETURN.</msg>
-<arg>name=q</arg>
-<arg>RETURN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2024-06-24T20:34:28.938365" elapsed="1.456063"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-06-24T20:46:31.403391" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-06-24T20:46:26.402862" elapsed="5.000529"/>
 </kw>
-<status status="PASS" start="2024-06-24T20:34:25.465044" elapsed="4.930400"/>
+<status status="PASS" start="2024-06-24T20:46:20.787833" elapsed="10.616162"/>
 </test>
 <doc>Login Functionality</doc>
-<status status="PASS" start="2024-06-24T20:34:25.209767" elapsed="5.187191"/>
+<status status="PASS" start="2024-06-24T20:46:20.500847" elapsed="10.905080"/>
 </suite>
 <statistics>
 <total>
@@ -37,7 +33,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Input">Input</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="clickLinks">clickLinks</stat>
 </suite>
 </statistics>
 <errors>
