@@ -1,50 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.11.2 on win32)" generated="2024-06-24T20:58:57.201304" rpa="false" schemaversion="5">
-<suite id="s1" name="Github" source="E:\robot-basics\github.robot">
+<robot generator="Robot 7.0.1 (Python 3.11.2 on win32)" generated="2024-06-25T19:46:03.398774" rpa="false" schemaversion="5">
+<suite id="s1" name="Input" source="E:\robot-basics\input.robot">
 <test id="s1-t1" name="Testing Selenium Driver" line="6">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-06-24T20:58:57.478604" level="INFO">Opening browser 'Chrome' to base url 'https://github.com/vinodh1988/robot-selenium'.</msg>
-<arg>https://github.com/vinodh1988/robot-selenium</arg>
+<msg time="2024-06-25T19:46:03.602663" level="INFO">Opening browser 'Chrome' to base url 'https://google.co.in'.</msg>
+<arg>https://google.co.in</arg>
 <arg>Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-06-24T20:58:57.478604" elapsed="3.232115"/>
+<status status="PASS" start="2024-06-25T19:46:03.602663" elapsed="3.315575"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-06-24T20:59:00.711230" level="INFO">Clicking button 'id=:R55ab:'.</msg>
-<arg>id=:R55ab:</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-24T20:59:00.711230" elapsed="0.564279"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-25T19:46:06.919235" level="INFO">Typing text 'prompt engineering' into text field 'name=q'.</msg>
+<arg>name=q</arg>
+<arg>prompt engineering</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-25T19:46:06.919235" elapsed="0.172321"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2024-06-24T20:59:06.539514" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-06-24T20:59:06.539514" level="FAIL">Element 'xpath= //*[@id=":rd:--label"]' not visible after 5 seconds.</msg>
-<arg>xpath= //*[@id=":rd:--label"]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2024-06-24T20:59:01.277512" elapsed="5.264522">Element 'xpath= //*[@id=":rd:--label"]' not visible after 5 seconds.</status>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-06-25T19:46:07.092554" level="INFO">Sending key(s) ('RETURN',) to name=q element.</msg>
+<msg time="2024-06-25T19:46:07.388298" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2024-06-25T19:46:07.388298" level="INFO">Releasing special key RETURN.</msg>
+<arg>name=q</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-06-25T19:46:07.091556" elapsed="0.507699"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>xpath= //*[@id=":rd:--label"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-06-24T20:59:06.543044" elapsed="0.000000"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>10</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2024-06-24T20:59:06.544045" elapsed="0.000000"/>
-</kw>
-<status status="FAIL" start="2024-06-24T20:58:57.477609" elapsed="9.067434">Element 'xpath= //*[@id=":rd:--label"]' not visible after 5 seconds.</status>
+<status status="PASS" start="2024-06-25T19:46:03.601654" elapsed="3.998607"/>
 </test>
 <doc>Login Functionality</doc>
-<status status="FAIL" start="2024-06-24T20:58:57.203315" elapsed="9.342736"/>
+<status status="PASS" start="2024-06-25T19:46:03.399776" elapsed="4.201480"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Github">Github</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Input">Input</stat>
 </suite>
 </statistics>
 <errors>
