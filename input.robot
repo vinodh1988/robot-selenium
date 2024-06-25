@@ -11,4 +11,3 @@ Testing Selenium Driver
     Open Browser	${url}    ${BROWSER}	
     Input Text    name=q    ${input}
     Press Keys    name=q    RETURN
-    
