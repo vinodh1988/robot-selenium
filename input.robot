@@ -2,9 +2,13 @@
 Documentation  Login Functionality
 Library  SeleniumLibrary
 
+*** Variables ***
+${BROWSER}    chrome
+${url}    https://google.co.in 
+${input}    Prompt engineering
 *** Test Cases ***
 Testing Selenium Driver
-    Open Browser	https://google.co.in	Chrome	
-    Input Text    name=q    prompt engineering
+    Open Browser	${url}    ${BROWSER}	
+    Input Text    name=q    ${input}
     Press Keys    name=q    RETURN
     
