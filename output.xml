@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.11.2 on win32)" generated="2024-06-25T19:46:03.398774" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.11.2 on win32)" generated="2024-06-25T19:49:58.614095" rpa="false" schemaversion="5">
 <suite id="s1" name="Input" source="E:\robot-basics\input.robot">
-<test id="s1-t1" name="Testing Selenium Driver" line="6">
+<test id="s1-t1" name="Testing Selenium Driver" line="10">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-06-25T19:46:03.602663" level="INFO">Opening browser 'Chrome' to base url 'https://google.co.in'.</msg>
-<arg>https://google.co.in</arg>
-<arg>Chrome</arg>
+<msg time="2024-06-25T19:49:58.860480" level="INFO">Opening browser 'chrome' to base url 'https://google.co.in'.</msg>
+<arg>${url}</arg>
+<arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-06-25T19:46:03.602663" elapsed="3.315575"/>
+<status status="PASS" start="2024-06-25T19:49:58.859481" elapsed="3.978277"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-06-25T19:46:06.919235" level="INFO">Typing text 'prompt engineering' into text field 'name=q'.</msg>
+<msg time="2024-06-25T19:50:02.840771" level="INFO">Typing text 'Prompt engineering' into text field 'name=q'.</msg>
 <arg>name=q</arg>
-<arg>prompt engineering</arg>
+<arg>${input}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-25T19:46:06.919235" elapsed="0.172321"/>
+<status status="PASS" start="2024-06-25T19:50:02.839767" elapsed="0.408443"/>
 </kw>
 <kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2024-06-25T19:46:07.092554" level="INFO">Sending key(s) ('RETURN',) to name=q element.</msg>
-<msg time="2024-06-25T19:46:07.388298" level="INFO">Pressing special key RETURN to element.</msg>
-<msg time="2024-06-25T19:46:07.388298" level="INFO">Releasing special key RETURN.</msg>
+<msg time="2024-06-25T19:50:03.250202" level="INFO">Sending key(s) ('RETURN',) to name=q element.</msg>
+<msg time="2024-06-25T19:50:03.672661" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2024-06-25T19:50:03.672661" level="INFO">Releasing special key RETURN.</msg>
 <arg>name=q</arg>
 <arg>RETURN</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2024-06-25T19:46:07.091556" elapsed="0.507699"/>
+<status status="PASS" start="2024-06-25T19:50:03.249198" elapsed="2.015783"/>
 </kw>
-<status status="PASS" start="2024-06-25T19:46:03.601654" elapsed="3.998607"/>
+<status status="PASS" start="2024-06-25T19:49:58.859481" elapsed="6.407553"/>
 </test>
 <doc>Login Functionality</doc>
-<status status="PASS" start="2024-06-25T19:46:03.399776" elapsed="4.201480"/>
+<status status="PASS" start="2024-06-25T19:49:58.616116" elapsed="6.653933"/>
 </suite>
 <statistics>
 <total>
