@@ -1,125 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.11.2 on win32)" generated="2024-06-25T20:52:09.577375" rpa="false" schemaversion="5">
-<suite id="s1" name="multiTest" source="E:\robot-basics\multiTest.robot">
-<test id="s1-t1" name="Testing google" line="12">
-<kw name="Open Site">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-06-25T20:52:09.830399" level="INFO">Opening browser 'chrome' to base url 'https://google.co.in'.</msg>
-<arg>${url}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-06-25T20:52:09.830399" elapsed="3.555898"/>
+<robot generator="Robot 7.0.1 (Python 3.11.2 on win32)" generated="2024-07-01T20:06:14.535988" rpa="false" schemaversion="5">
+<suite id="s1" name="newTask" source="E:\robot-basics\newTask.robot">
+<test id="s1-t1" name="File Copy Testing" line="10">
+<kw name="Move File" owner="FileUtilities">
+<arg>${sourcef}</arg>
+<arg>${destf}</arg>
+<status status="PASS" start="2024-07-01T20:06:14.560185" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-07-01T20:06:14.561182" level="INFO">File successfully Written</msg>
+<arg>File successfully Written</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-07-01T20:06:14.561182" elapsed="0.000000"/>
 </kw>
 <kw name="Write Text To Log File" owner="RobotLocalFileUtils">
-<arg>e:/robotlogs/activity.log</arg>
-<arg>"url: " ${url}</arg>
-<status status="PASS" start="2024-06-25T20:52:13.387302" elapsed="0.000999"/>
+<arg>${logpath}</arg>
+<arg>${sourcef} written to ${destf}</arg>
+<status status="PASS" start="2024-07-01T20:06:14.561182" elapsed="0.000000"/>
 </kw>
-<arg>${url1}</arg>
-<status status="PASS" start="2024-06-25T20:52:09.829398" elapsed="3.558903"/>
-</kw>
-<kw name="Fill Text And Press Enter">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-06-25T20:52:13.393052" level="INFO">Typing text 'Prompt engineering' into text field 'name=q'.</msg>
-<arg>name=q</arg>
-<arg>${text}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-25T20:52:13.391740" elapsed="0.335705"/>
-</kw>
-<kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2024-06-25T20:52:13.728963" level="INFO">Sending key(s) ('RETURN',) to name=q element.</msg>
-<msg time="2024-06-25T20:52:14.281415" level="INFO">Pressing special key RETURN to element.</msg>
-<msg time="2024-06-25T20:52:14.281415" level="INFO">Releasing special key RETURN.</msg>
-<arg>name=q</arg>
-<arg>RETURN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2024-06-25T20:52:13.727445" elapsed="2.061846"/>
-</kw>
-<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
-<arg>e:/robotlogs/activity.log</arg>
-<arg>"successful input of " ${text}</arg>
-<status status="PASS" start="2024-06-25T20:52:15.790294" elapsed="0.001015"/>
-</kw>
-<arg>${input}</arg>
-<status status="PASS" start="2024-06-25T20:52:13.390720" elapsed="2.401588"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-06-25T20:52:18.793770" level="INFO">Slept 3 seconds.</msg>
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-06-25T20:52:15.793312" elapsed="3.000458"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-06-25T20:52:18.794791" elapsed="2.187424"/>
-</kw>
-<status status="PASS" start="2024-06-25T20:52:09.829398" elapsed="11.153846"/>
-</test>
-<test id="s1-t2" name="Testing bing" line="17">
-<kw name="Open Site">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-06-25T20:52:20.987226" level="INFO">Opening browser 'chrome' to base url 'https://bing.com'.</msg>
-<arg>${url}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-06-25T20:52:20.987226" elapsed="2.352012"/>
-</kw>
-<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
-<arg>e:/robotlogs/activity.log</arg>
-<arg>"url: " ${url}</arg>
-<status status="PASS" start="2024-06-25T20:52:23.339238" elapsed="0.000996"/>
-</kw>
-<arg>${url2}</arg>
-<status status="PASS" start="2024-06-25T20:52:20.986227" elapsed="2.354007"/>
-</kw>
-<kw name="Fill Text And Press Enter">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-06-25T20:52:23.341244" level="INFO">Typing text 'Prompt engineering' into text field 'name=q'.</msg>
-<arg>name=q</arg>
-<arg>${text}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-25T20:52:23.341244" elapsed="0.175920"/>
-</kw>
-<kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2024-06-25T20:52:23.518673" level="INFO">Sending key(s) ('RETURN',) to name=q element.</msg>
-<msg time="2024-06-25T20:52:23.820540" level="INFO">Pressing special key RETURN to element.</msg>
-<msg time="2024-06-25T20:52:23.820540" level="INFO">Releasing special key RETURN.</msg>
-<arg>name=q</arg>
-<arg>RETURN</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2024-06-25T20:52:23.517164" elapsed="0.315900"/>
-</kw>
-<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
-<arg>e:/robotlogs/activity.log</arg>
-<arg>"successful input of " ${text}</arg>
-<status status="PASS" start="2024-06-25T20:52:23.833064" elapsed="0.000993"/>
-</kw>
-<arg>${input}</arg>
-<status status="PASS" start="2024-06-25T20:52:23.340234" elapsed="0.493823"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-06-25T20:52:26.834699" level="INFO">Slept 3 seconds.</msg>
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-06-25T20:52:23.834057" elapsed="3.000642"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-06-25T20:52:26.835536" elapsed="2.216936"/>
-</kw>
-<status status="PASS" start="2024-06-25T20:52:20.985235" elapsed="8.068238"/>
+<status status="PASS" start="2024-07-01T20:06:14.560185" elapsed="0.001989"/>
 </test>
 <doc>Login Functionality</doc>
-<status status="PASS" start="2024-06-25T20:52:09.578884" elapsed="19.477192"/>
+<status status="PASS" start="2024-07-01T20:06:14.536984" elapsed="0.025190"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="multiTest">multiTest</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="newTask">newTask</stat>
 </suite>
 </statistics>
 <errors>
