@@ -11,7 +11,7 @@ ${logpath}    E:/robotlogs/auto.log
 File Size Should be Atleast 100
     ${file_size}    Get Size Of File    ${fileSizePath}
     ${file_size_str}    Convert To String    ${file_size}
-    Log    size of file is    ${file_size_str}
+    Log    size of file is ${file_size_str}
     Write Text To Log File    ${logpath}    filesize of ${filesizePath} is ${file_size_str}
     Should Be True    ${file_size}>100
 
