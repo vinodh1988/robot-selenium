@@ -1,36 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.11.2 on win32)" generated="2024-07-01T20:06:14.535988" rpa="false" schemaversion="5">
-<suite id="s1" name="newTask" source="E:\robot-basics\newTask.robot">
-<test id="s1-t1" name="File Copy Testing" line="10">
-<kw name="Move File" owner="FileUtilities">
-<arg>${sourcef}</arg>
-<arg>${destf}</arg>
-<status status="PASS" start="2024-07-01T20:06:14.560185" elapsed="0.000000"/>
+<robot generator="Robot 7.0.1 (Python 3.11.2 on win32)" generated="2024-07-01T20:46:14.685786" rpa="false" schemaversion="5">
+<suite id="s1" name="returnTests" source="E:\robot-basics\returnTests.robot">
+<test id="s1-t1" name="File Size Should be Atleast 100" line="11">
+<kw name="Get Size Of File" owner="FileUtilities">
+<msg time="2024-07-01T20:46:14.716214" level="INFO">${file_size} = 235.8095703125</msg>
+<var>${file_size}</var>
+<arg>${fileSizePath}</arg>
+<status status="PASS" start="2024-07-01T20:46:14.716214" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-07-01T20:46:14.717214" level="INFO">${file_size_str} = 235.8095703125</msg>
+<var>${file_size_str}</var>
+<arg>${file_size}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-07-01T20:46:14.716214" elapsed="0.001000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-07-01T20:06:14.561182" level="INFO">File successfully Written</msg>
-<arg>File successfully Written</arg>
+<msg time="2024-07-01T20:46:14.717214" level="FAIL">Invalid log level '235.8095703125'.</msg>
+<arg>size of file is</arg>
+<arg>${file_size_str}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-07-01T20:06:14.561182" elapsed="0.000000"/>
+<status status="FAIL" start="2024-07-01T20:46:14.717214" elapsed="0.000000">Invalid log level '235.8095703125'.</status>
 </kw>
 <kw name="Write Text To Log File" owner="RobotLocalFileUtils">
 <arg>${logpath}</arg>
-<arg>${sourcef} written to ${destf}</arg>
-<status status="PASS" start="2024-07-01T20:06:14.561182" elapsed="0.000000"/>
+<arg>filesize of ${filesizePath} is ${file_size_str}</arg>
+<status status="NOT RUN" start="2024-07-01T20:46:14.717214" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-07-01T20:06:14.560185" elapsed="0.001989"/>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${file_size}&gt;100</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2024-07-01T20:46:14.718405" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-07-01T20:46:14.715210" elapsed="0.003195">Invalid log level '235.8095703125'.</status>
 </test>
 <doc>Login Functionality</doc>
-<status status="PASS" start="2024-07-01T20:06:14.536984" elapsed="0.025190"/>
+<status status="FAIL" start="2024-07-01T20:46:14.687787" elapsed="0.031131"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="newTask">newTask</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="returnTests">returnTests</stat>
 </suite>
 </statistics>
 <errors>
