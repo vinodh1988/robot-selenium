@@ -1,49 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.11.2 on win32)" generated="2024-07-01T20:48:56.619238" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.11.2 on win32)" generated="2024-07-01T20:52:04.285578" rpa="false" schemaversion="5">
 <suite id="s1" name="returnTests" source="E:\robot-basics\returnTests.robot">
 <test id="s1-t1" name="File Size Should be Atleast 100" line="11">
 <kw name="Get Size Of File" owner="FileUtilities">
-<msg time="2024-07-01T20:48:56.653355" level="INFO">${file_size} = 236</msg>
+<msg time="2024-07-01T20:52:04.325181" level="INFO">${file_size} = 236</msg>
 <var>${file_size}</var>
 <arg>${fileSizePath}</arg>
-<status status="PASS" start="2024-07-01T20:48:56.653355" elapsed="0.000000"/>
+<status status="PASS" start="2024-07-01T20:52:04.324175" elapsed="0.001006"/>
 </kw>
 <kw name="Convert To String" owner="BuiltIn">
-<msg time="2024-07-01T20:48:56.654456" level="INFO">${file_size_str} = 236</msg>
+<msg time="2024-07-01T20:52:04.325181" level="INFO">${file_size_str} = 236</msg>
 <var>${file_size_str}</var>
 <arg>${file_size}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<status status="PASS" start="2024-07-01T20:48:56.654456" elapsed="0.000000"/>
+<status status="PASS" start="2024-07-01T20:52:04.325181" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-07-01T20:48:56.654456" level="INFO">size of file is 236</msg>
+<msg time="2024-07-01T20:52:04.326180" level="INFO">size of file is 236</msg>
 <arg>size of file is ${file_size_str}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-07-01T20:48:56.654456" elapsed="0.000000"/>
+<status status="PASS" start="2024-07-01T20:52:04.326180" elapsed="0.000000"/>
 </kw>
 <kw name="Write Text To Log File" owner="RobotLocalFileUtils">
 <arg>${logpath}</arg>
 <arg>filesize of ${filesizePath} is ${file_size_str}</arg>
-<status status="PASS" start="2024-07-01T20:48:56.654456" elapsed="0.001000"/>
+<status status="PASS" start="2024-07-01T20:52:04.326180" elapsed="0.000000"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${file_size}&gt;100</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="PASS" start="2024-07-01T20:48:56.655456" elapsed="0.000000"/>
+<status status="PASS" start="2024-07-01T20:52:04.327181" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-07-01T20:48:56.652361" elapsed="0.004109"/>
+<status status="PASS" start="2024-07-01T20:52:04.324175" elapsed="0.003006"/>
+</test>
+<test id="s1-t2" name="Number of files must atleast 10" line="18">
+<kw name="Number Of Files" owner="FileUtilities">
+<msg time="2024-07-01T20:52:04.330191" level="INFO">${numfiles} = 13</msg>
+<var>${numfiles}</var>
+<arg>${folderpath}</arg>
+<status status="PASS" start="2024-07-01T20:52:04.329189" elapsed="0.001002"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-07-01T20:52:04.330191" level="INFO">${numfilesstr} = 13</msg>
+<var>${numfilesstr}</var>
+<arg>${numfiles}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-07-01T20:52:04.330191" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-07-01T20:52:04.331181" level="INFO">Number of files is 13</msg>
+<arg>Number of files is ${numfilesstr}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-07-01T20:52:04.331181" elapsed="0.000000"/>
+</kw>
+<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
+<arg>${logpath}</arg>
+<arg>${numfilesstr} is the total number of files</arg>
+<status status="PASS" start="2024-07-01T20:52:04.331181" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${numfiles}&gt;=10</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-07-01T20:52:04.331181" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-07-01T20:52:04.328181" elapsed="0.004504"/>
 </test>
 <doc>Login Functionality</doc>
-<status status="PASS" start="2024-07-01T20:48:56.621238" elapsed="0.036443"/>
+<status status="PASS" start="2024-07-01T20:52:04.286571" elapsed="0.047120"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="returnTests">returnTests</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="returnTests">returnTests</stat>
 </suite>
 </statistics>
 <errors>

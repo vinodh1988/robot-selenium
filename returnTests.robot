@@ -15,3 +15,10 @@ File Size Should be Atleast 100
     Write Text To Log File    ${logpath}    filesize of ${filesizePath} is ${file_size_str}
     Should Be True    ${file_size}>100
 
+Number of files must atleast 10
+    ${numfiles}    Number Of Files    ${folderpath}
+    ${numfilesstr}    Convert To String    ${numfiles}
+    Log    Number of files is ${numfilesstr}
+    Write Text To Log File    ${logpath}    ${numfilesstr} is the total number of files 
+    Should Be True    ${numfiles}>=10
+
