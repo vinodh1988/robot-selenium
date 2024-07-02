@@ -1,21 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.11.2 on win32)" generated="2024-07-02T19:58:34.023654" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.11.2 on win32)" generated="2024-07-02T20:12:55.804353" rpa="false" schemaversion="5">
 <suite id="s1" name="Dictauto" source="E:\robot-basics\dictauto.robot">
-<test id="s1-t1" name="Test Dictionary Logs" line="10">
+<test id="s1-t1" name="Test Dictionary Logs" line="12">
+<for flavor="IN">
+<iter>
 <kw name="Log Dictionary" owner="FileUtilities">
 <arg>${filepath}</arg>
-<arg>${process1}</arg>
-<status status="PASS" start="2024-07-02T19:58:34.049538" elapsed="0.000000"/>
+<arg>${x_dict}</arg>
+<status status="PASS" start="2024-07-02T20:12:55.828930" elapsed="0.000000"/>
 </kw>
+<var name="${x_dict}">{'process_id': 'p101', 'name': 'notepad.exe', 'size': '30mb'}</var>
+<status status="PASS" start="2024-07-02T20:12:55.828930" elapsed="0.001505"/>
+</iter>
+<iter>
 <kw name="Log Dictionary" owner="FileUtilities">
 <arg>${filepath}</arg>
-<arg>${process2}</arg>
-<status status="PASS" start="2024-07-02T19:58:34.049538" elapsed="0.000999"/>
+<arg>${x_dict}</arg>
+<status status="PASS" start="2024-07-02T20:12:55.830435" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-07-02T19:58:34.048529" elapsed="0.002008"/>
+<var name="${x_dict}">{'process_id': 'p102', 'name': 'paint.exe', 'size': '53mb'}</var>
+<status status="PASS" start="2024-07-02T20:12:55.830435" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log Dictionary" owner="FileUtilities">
+<arg>${filepath}</arg>
+<arg>${x_dict}</arg>
+<status status="PASS" start="2024-07-02T20:12:55.830435" elapsed="0.000000"/>
+</kw>
+<var name="${x_dict}">{'process_id': 'p103', 'name': 'robot.exe', 'size': '153mb'}</var>
+<status status="PASS" start="2024-07-02T20:12:55.830435" elapsed="0.001005"/>
+</iter>
+<var>${x_dict}</var>
+<value>@{dlist}</value>
+<status status="PASS" start="2024-07-02T20:12:55.828930" elapsed="0.002510"/>
+</for>
+<status status="PASS" start="2024-07-02T20:12:55.828930" elapsed="0.002510"/>
 </test>
 <doc>Login Functionality</doc>
-<status status="PASS" start="2024-07-02T19:58:34.025659" elapsed="0.025878"/>
+<status status="PASS" start="2024-07-02T20:12:55.806366" elapsed="0.025707"/>
 </suite>
 <statistics>
 <total>
