@@ -1,43 +1,218 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.11.2 on win32)" generated="2024-07-02T20:12:55.804353" rpa="false" schemaversion="5">
-<suite id="s1" name="Dictauto" source="E:\robot-basics\dictauto.robot">
-<test id="s1-t1" name="Test Dictionary Logs" line="12">
+<robot generator="Robot 7.0.1 (Python 3.11.2 on win32)" generated="2024-07-02T20:35:10.454119" rpa="false" schemaversion="5">
+<suite id="s1" name="Csvauto" source="E:\robot-basics\csvauto.robot">
+<test id="s1-t1" name="Data Driven CSV Test" line="10">
+<kw name="Read Csv To Array Of Dictionary" owner="FileUtilities">
+<msg time="2024-07-02T20:35:10.507216" level="INFO">@{proclist} = [ {'processid': 'p101', 'processname': 'ProcName21', 'memory': '119 MB'} | {'processid': 'p102', 'processname': 'ProcNAme22', 'memory': '229 MB'} | {'processid': 'p103', 'processname': 'ProcName23', '...</msg>
+<var>@{proclist}</var>
+<arg>${csvpath}</arg>
+<status status="PASS" start="2024-07-02T20:35:10.507216" elapsed="0.000000"/>
+</kw>
 <for flavor="IN">
 <iter>
 <kw name="Log Dictionary" owner="FileUtilities">
-<arg>${filepath}</arg>
-<arg>${x_dict}</arg>
-<status status="PASS" start="2024-07-02T20:12:55.828930" elapsed="0.000000"/>
+<arg>${logpath}</arg>
+<arg>${proc}</arg>
+<status status="PASS" start="2024-07-02T20:35:10.508216" elapsed="0.000000"/>
 </kw>
-<var name="${x_dict}">{'process_id': 'p101', 'name': 'notepad.exe', 'size': '30mb'}</var>
-<status status="PASS" start="2024-07-02T20:12:55.828930" elapsed="0.001505"/>
+<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
+<arg>${logpath}</arg>
+<arg>------------------------------------------</arg>
+<status status="PASS" start="2024-07-02T20:35:10.509219" elapsed="0.000000"/>
+</kw>
+<var name="${proc}">{'processid': 'p101', 'processname': 'ProcName21', 'memory': '119 MB'}</var>
+<status status="PASS" start="2024-07-02T20:35:10.508216" elapsed="0.001003"/>
 </iter>
 <iter>
 <kw name="Log Dictionary" owner="FileUtilities">
-<arg>${filepath}</arg>
-<arg>${x_dict}</arg>
-<status status="PASS" start="2024-07-02T20:12:55.830435" elapsed="0.000000"/>
+<arg>${logpath}</arg>
+<arg>${proc}</arg>
+<status status="PASS" start="2024-07-02T20:35:10.509219" elapsed="0.000000"/>
 </kw>
-<var name="${x_dict}">{'process_id': 'p102', 'name': 'paint.exe', 'size': '53mb'}</var>
-<status status="PASS" start="2024-07-02T20:12:55.830435" elapsed="0.000000"/>
+<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
+<arg>${logpath}</arg>
+<arg>------------------------------------------</arg>
+<status status="PASS" start="2024-07-02T20:35:10.509219" elapsed="0.000997"/>
+</kw>
+<var name="${proc}">{'processid': 'p102', 'processname': 'ProcNAme22', 'memory': '229 MB'}</var>
+<status status="PASS" start="2024-07-02T20:35:10.509219" elapsed="0.000997"/>
 </iter>
 <iter>
 <kw name="Log Dictionary" owner="FileUtilities">
-<arg>${filepath}</arg>
-<arg>${x_dict}</arg>
-<status status="PASS" start="2024-07-02T20:12:55.830435" elapsed="0.000000"/>
+<arg>${logpath}</arg>
+<arg>${proc}</arg>
+<status status="PASS" start="2024-07-02T20:35:10.510216" elapsed="0.000000"/>
 </kw>
-<var name="${x_dict}">{'process_id': 'p103', 'name': 'robot.exe', 'size': '153mb'}</var>
-<status status="PASS" start="2024-07-02T20:12:55.830435" elapsed="0.001005"/>
+<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
+<arg>${logpath}</arg>
+<arg>------------------------------------------</arg>
+<status status="PASS" start="2024-07-02T20:35:10.510216" elapsed="0.000000"/>
+</kw>
+<var name="${proc}">{'processid': 'p103', 'processname': 'ProcName23', 'memory': '339 MB'}</var>
+<status status="PASS" start="2024-07-02T20:35:10.510216" elapsed="0.000000"/>
 </iter>
-<var>${x_dict}</var>
-<value>@{dlist}</value>
-<status status="PASS" start="2024-07-02T20:12:55.828930" elapsed="0.002510"/>
+<iter>
+<kw name="Log Dictionary" owner="FileUtilities">
+<arg>${logpath}</arg>
+<arg>${proc}</arg>
+<status status="PASS" start="2024-07-02T20:35:10.510216" elapsed="0.001000"/>
+</kw>
+<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
+<arg>${logpath}</arg>
+<arg>------------------------------------------</arg>
+<status status="PASS" start="2024-07-02T20:35:10.511216" elapsed="0.000000"/>
+</kw>
+<var name="${proc}">{'processid': 'p104', 'processname': 'ProcName24', 'memory': '449 MB'}</var>
+<status status="PASS" start="2024-07-02T20:35:10.510216" elapsed="0.001000"/>
+</iter>
+<iter>
+<kw name="Log Dictionary" owner="FileUtilities">
+<arg>${logpath}</arg>
+<arg>${proc}</arg>
+<status status="PASS" start="2024-07-02T20:35:10.511216" elapsed="0.000000"/>
+</kw>
+<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
+<arg>${logpath}</arg>
+<arg>------------------------------------------</arg>
+<status status="PASS" start="2024-07-02T20:35:10.511216" elapsed="0.001000"/>
+</kw>
+<var name="${proc}">{'processid': 'p105', 'processname': 'ProcName25', 'memory': '559 MB'}</var>
+<status status="PASS" start="2024-07-02T20:35:10.511216" elapsed="0.001000"/>
+</iter>
+<iter>
+<kw name="Log Dictionary" owner="FileUtilities">
+<arg>${logpath}</arg>
+<arg>${proc}</arg>
+<status status="PASS" start="2024-07-02T20:35:10.512216" elapsed="0.000000"/>
+</kw>
+<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
+<arg>${logpath}</arg>
+<arg>------------------------------------------</arg>
+<status status="PASS" start="2024-07-02T20:35:10.512216" elapsed="0.000000"/>
+</kw>
+<var name="${proc}">{'processid': 'p106', 'processname': 'ProcName26', 'memory': '669 MB'}</var>
+<status status="PASS" start="2024-07-02T20:35:10.512216" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log Dictionary" owner="FileUtilities">
+<arg>${logpath}</arg>
+<arg>${proc}</arg>
+<status status="PASS" start="2024-07-02T20:35:10.512216" elapsed="0.000000"/>
+</kw>
+<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
+<arg>${logpath}</arg>
+<arg>------------------------------------------</arg>
+<status status="PASS" start="2024-07-02T20:35:10.512216" elapsed="0.001001"/>
+</kw>
+<var name="${proc}">{'processid': 'p107', 'processname': 'ProcName27', 'memory': '779 MB'}</var>
+<status status="PASS" start="2024-07-02T20:35:10.512216" elapsed="0.001001"/>
+</iter>
+<iter>
+<kw name="Log Dictionary" owner="FileUtilities">
+<arg>${logpath}</arg>
+<arg>${proc}</arg>
+<status status="PASS" start="2024-07-02T20:35:10.513217" elapsed="0.000000"/>
+</kw>
+<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
+<arg>${logpath}</arg>
+<arg>------------------------------------------</arg>
+<status status="PASS" start="2024-07-02T20:35:10.513217" elapsed="0.000000"/>
+</kw>
+<var name="${proc}">{'processid': 'p108', 'processname': 'ProcName28', 'memory': '889 MB'}</var>
+<status status="PASS" start="2024-07-02T20:35:10.513217" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log Dictionary" owner="FileUtilities">
+<arg>${logpath}</arg>
+<arg>${proc}</arg>
+<status status="PASS" start="2024-07-02T20:35:10.513217" elapsed="0.000999"/>
+</kw>
+<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
+<arg>${logpath}</arg>
+<arg>------------------------------------------</arg>
+<status status="PASS" start="2024-07-02T20:35:10.514216" elapsed="0.000000"/>
+</kw>
+<var name="${proc}">{'processid': 'p109', 'processname': 'ProcName29', 'memory': '999 MB'}</var>
+<status status="PASS" start="2024-07-02T20:35:10.513217" elapsed="0.000999"/>
+</iter>
+<iter>
+<kw name="Log Dictionary" owner="FileUtilities">
+<arg>${logpath}</arg>
+<arg>${proc}</arg>
+<status status="PASS" start="2024-07-02T20:35:10.514216" elapsed="0.000000"/>
+</kw>
+<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
+<arg>${logpath}</arg>
+<arg>------------------------------------------</arg>
+<status status="PASS" start="2024-07-02T20:35:10.514216" elapsed="0.000000"/>
+</kw>
+<var name="${proc}">{'processid': 'p110', 'processname': 'ProcName30', 'memory': '009 MB'}</var>
+<status status="PASS" start="2024-07-02T20:35:10.514216" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log Dictionary" owner="FileUtilities">
+<arg>${logpath}</arg>
+<arg>${proc}</arg>
+<status status="PASS" start="2024-07-02T20:35:10.515222" elapsed="0.000000"/>
+</kw>
+<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
+<arg>${logpath}</arg>
+<arg>------------------------------------------</arg>
+<status status="PASS" start="2024-07-02T20:35:10.515222" elapsed="0.000000"/>
+</kw>
+<var name="${proc}">{'processid': 'p111', 'processname': 'ProcName31', 'memory': '119 MB'}</var>
+<status status="PASS" start="2024-07-02T20:35:10.514216" elapsed="0.001513"/>
+</iter>
+<iter>
+<kw name="Log Dictionary" owner="FileUtilities">
+<arg>${logpath}</arg>
+<arg>${proc}</arg>
+<status status="PASS" start="2024-07-02T20:35:10.515729" elapsed="0.000000"/>
+</kw>
+<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
+<arg>${logpath}</arg>
+<arg>------------------------------------------</arg>
+<status status="PASS" start="2024-07-02T20:35:10.515729" elapsed="0.000000"/>
+</kw>
+<var name="${proc}">{'processid': 'p112', 'processname': 'ProcName32', 'memory': '229 MB'}</var>
+<status status="PASS" start="2024-07-02T20:35:10.515729" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Log Dictionary" owner="FileUtilities">
+<arg>${logpath}</arg>
+<arg>${proc}</arg>
+<status status="PASS" start="2024-07-02T20:35:10.515729" elapsed="0.000000"/>
+</kw>
+<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
+<arg>${logpath}</arg>
+<arg>------------------------------------------</arg>
+<status status="PASS" start="2024-07-02T20:35:10.515729" elapsed="0.001015"/>
+</kw>
+<var name="${proc}">{'processid': 'p113', 'processname': 'ProcName33', 'memory': '339 MB'}</var>
+<status status="PASS" start="2024-07-02T20:35:10.515729" elapsed="0.001015"/>
+</iter>
+<iter>
+<kw name="Log Dictionary" owner="FileUtilities">
+<arg>${logpath}</arg>
+<arg>${proc}</arg>
+<status status="PASS" start="2024-07-02T20:35:10.516744" elapsed="0.000000"/>
+</kw>
+<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
+<arg>${logpath}</arg>
+<arg>------------------------------------------</arg>
+<status status="PASS" start="2024-07-02T20:35:10.516744" elapsed="0.000000"/>
+</kw>
+<var name="${proc}">{'processid': 'p114', 'processname': 'ProcName34', 'memory': '449 MB'}</var>
+<status status="PASS" start="2024-07-02T20:35:10.516744" elapsed="0.000000"/>
+</iter>
+<var>${proc}</var>
+<value>@{proclist}</value>
+<status status="PASS" start="2024-07-02T20:35:10.508216" elapsed="0.008528"/>
 </for>
-<status status="PASS" start="2024-07-02T20:12:55.828930" elapsed="0.002510"/>
+<status status="PASS" start="2024-07-02T20:35:10.506212" elapsed="0.011537"/>
 </test>
 <doc>Login Functionality</doc>
-<status status="PASS" start="2024-07-02T20:12:55.806366" elapsed="0.025707"/>
+<status status="PASS" start="2024-07-02T20:35:10.456302" elapsed="0.061447"/>
 </suite>
 <statistics>
 <total>
@@ -46,7 +221,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Dictauto">Dictauto</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Csvauto">Csvauto</stat>
 </suite>
 </statistics>
 <errors>
