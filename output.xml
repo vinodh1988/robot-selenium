@@ -1,66 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.2 on win32)" generated="20240703 20:11:33.822" rpa="false" schemaversion="4">
-<suite id="s1" name="Firstdesktopauto" source="E:\robot-basics\firstdesktopauto.robot">
-<test id="s1-t1" name="Run Applications" line="10">
-<kw name="Run Command">
-<arg>${CALCULATOR}</arg>
+<robot generator="Robot 6.1.1 (Python 3.11.2 on win32)" generated="20240703 20:27:26.072" rpa="true" schemaversion="4">
+<suite id="s1" name="Calculator" source="E:\robot-basics\calculator.robot">
+<test id="s1-t1" name="Open Calculator" line="8">
 <kw name="Windows Run" library="RPA.Windows">
-<arg>${appname}</arg>
+<arg>${CALCULATOR}</arg>
 <tag>window</tag>
 <doc>Use Windows Run window to launch an application.</doc>
-<msg timestamp="20240703 20:11:34.520" level="INFO">Sending keys '{Win}r' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
-<msg timestamp="20240703 20:11:35.114" level="INFO">Sending keys 'calc.exe' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
-<msg timestamp="20240703 20:11:35.783" level="INFO">Sending keys '{Enter}' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
-<status status="PASS" starttime="20240703 20:11:34.519" endtime="20240703 20:11:39.315"/>
-</kw>
-<status status="PASS" starttime="20240703 20:11:34.518" endtime="20240703 20:11:39.315"/>
+<msg timestamp="20240703 20:27:26.324" level="INFO">Sending keys '{Win}r' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
+<msg timestamp="20240703 20:27:26.874" level="INFO">Sending keys 'calc.exe' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
+<msg timestamp="20240703 20:27:27.487" level="INFO">Sending keys '{Enter}' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
+<status status="PASS" starttime="20240703 20:27:26.324" endtime="20240703 20:27:31.012"/>
 </kw>
 <kw name="Control Window" library="RPA.Windows">
 <arg>Calculator</arg>
 <tag>window</tag>
 <doc>Controls the window defined by the locator.</doc>
-<msg timestamp="20240703 20:11:39.941" level="INFO">Getting element with locator: Calculator and type:WindowControl</msg>
-<msg timestamp="20240703 20:11:39.941" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x0000026B3409AC10&gt;, locator='Calculator and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=1366, top=0, bottom=768, width=1366, height=768, xcenter=683, ycenter=384)</msg>
-<msg timestamp="20240703 20:11:39.942" level="INFO">Locator 'Calculator and type:WindowControl' produced matcher: MatchObject(locators=[('Name', 'Calculator', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
-<msg timestamp="20240703 20:11:40.831" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000026B35A34FD0&gt;, locator='Calculator and type:WindowControl', name='Calculator', automation_id='', control_type='WindowControl', class_name='ApplicationFrameWindow', left=49, right=385, top=69, bottom=610, width=336, height=541, xcenter=217, ycenter=339)</msg>
-<status status="PASS" starttime="20240703 20:11:39.316" endtime="20240703 20:11:41.335"/>
+<msg timestamp="20240703 20:27:31.212" level="INFO">Getting element with locator: Calculator and type:WindowControl</msg>
+<msg timestamp="20240703 20:27:31.213" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x00000184DAB50950&gt;, locator='Calculator and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=1366, top=0, bottom=768, width=1366, height=768, xcenter=683, ycenter=384)</msg>
+<msg timestamp="20240703 20:27:31.213" level="INFO">Locator 'Calculator and type:WindowControl' produced matcher: MatchObject(locators=[('Name', 'Calculator', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:27:31.262" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x00000184DAB53490&gt;, locator='Calculator and type:WindowControl', name='Calculator', automation_id='', control_type='WindowControl', class_name='ApplicationFrameWindow', left=62, right=398, top=179, bottom=720, width=336, height=541, xcenter=230, ycenter=449)</msg>
+<status status="PASS" starttime="20240703 20:27:31.013" endtime="20240703 20:27:31.764"/>
 </kw>
-<kw name="Run Command">
-<arg>${NOTEPAD}</arg>
-<kw name="Windows Run" library="RPA.Windows">
-<arg>${appname}</arg>
-<tag>window</tag>
-<doc>Use Windows Run window to launch an application.</doc>
-<msg timestamp="20240703 20:11:41.337" level="INFO">Sending keys '{Win}r' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
-<msg timestamp="20240703 20:11:41.903" level="INFO">Sending keys 'notepad' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
-<msg timestamp="20240703 20:11:42.563" level="INFO">Sending keys '{Enter}' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
-<status status="PASS" starttime="20240703 20:11:41.337" endtime="20240703 20:11:46.093"/>
-</kw>
-<status status="PASS" starttime="20240703 20:11:41.336" endtime="20240703 20:11:46.093"/>
-</kw>
-<kw name="Control Window" library="RPA.Windows">
-<arg>reportnow.txt - Notepad</arg>
-<tag>window</tag>
-<doc>Controls the window defined by the locator.</doc>
-<msg timestamp="20240703 20:11:46.096" level="INFO">Getting element with locator: reportnow.txt - Notepad and type:WindowControl</msg>
-<msg timestamp="20240703 20:11:46.096" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x0000026B35E38410&gt;, locator='reportnow.txt - Notepad and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=1366, top=0, bottom=768, width=1366, height=768, xcenter=683, ycenter=384)</msg>
-<msg timestamp="20240703 20:11:46.096" level="INFO">Locator 'reportnow.txt - Notepad and type:WindowControl' produced matcher: MatchObject(locators=[('Name', 'reportnow.txt - Notepad', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
-<msg timestamp="20240703 20:11:46.917" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000026B35A360D0&gt;, locator='reportnow.txt - Notepad and type:WindowControl', name='reportnow.txt - Notepad', automation_id='', control_type='WindowControl', class_name='Notepad', left=104, right=1129, top=104, bottom=623, width=1025, height=519, xcenter=616, ycenter=363)</msg>
-<status status="PASS" starttime="20240703 20:11:46.093" endtime="20240703 20:11:47.424"/>
-</kw>
-<status status="PASS" starttime="20240703 20:11:34.516" endtime="20240703 20:11:47.424"/>
+<status status="PASS" starttime="20240703 20:27:26.323" endtime="20240703 20:27:31.766"/>
 </test>
-<doc>RPA Windows Application</doc>
-<status status="PASS" starttime="20240703 20:11:33.825" endtime="20240703 20:11:47.427"/>
+<test id="s1-t2" name="Perform Calculation" line="11">
+<kw name="Click" library="RPA.Windows">
+<arg>name:One</arg>
+<tag>action</tag>
+<tag>mouse</tag>
+<doc>Mouse click on element matching given locator.</doc>
+<msg timestamp="20240703 20:27:31.771" level="INFO">Getting element with locator: name:One</msg>
+<msg timestamp="20240703 20:27:31.772" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x00000184DAB53490&gt;, locator='Calculator and type:WindowControl', name='Calculator', automation_id='', control_type='WindowControl', class_name='ApplicationFrameWindow', left=62, right=398, top=179, bottom=720, width=336, height=541, xcenter=230, ycenter=449)</msg>
+<msg timestamp="20240703 20:27:31.772" level="INFO">Locator 'name:One' produced matcher: MatchObject(locators=[('Name', 'One', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:27:31.870" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.ButtonControl object at 0x00000184DAB89A50&gt;, locator='name:One', name='One', automation_id='num1Button', control_type='ButtonControl', class_name='Button', left=74, right=151, top=604, bottom=655, width=77, height=51, xcenter=112, ycenter=629)</msg>
+<status status="PASS" starttime="20240703 20:27:31.770" endtime="20240703 20:27:32.437"/>
+</kw>
+<kw name="Click" library="RPA.Windows">
+<arg>name:Plus</arg>
+<tag>action</tag>
+<tag>mouse</tag>
+<doc>Mouse click on element matching given locator.</doc>
+<msg timestamp="20240703 20:27:32.439" level="INFO">Getting element with locator: name:Plus</msg>
+<msg timestamp="20240703 20:27:32.439" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x00000184DAB53490&gt;, locator='Calculator and type:WindowControl', name='Calculator', automation_id='', control_type='WindowControl', class_name='ApplicationFrameWindow', left=62, right=398, top=179, bottom=720, width=336, height=541, xcenter=230, ycenter=449)</msg>
+<msg timestamp="20240703 20:27:32.439" level="INFO">Locator 'name:Plus' produced matcher: MatchObject(locators=[('Name', 'Plus', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:27:32.510" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.ButtonControl object at 0x00000184DAB833D0&gt;, locator='name:Plus', name='Plus', automation_id='plusButton', control_type='ButtonControl', class_name='Button', left=310, right=386, top=604, bottom=655, width=76, height=51, xcenter=348, ycenter=629)</msg>
+<status status="PASS" starttime="20240703 20:27:32.437" endtime="20240703 20:27:33.081"/>
+</kw>
+<kw name="Click" library="RPA.Windows">
+<arg>name:Two</arg>
+<tag>action</tag>
+<tag>mouse</tag>
+<doc>Mouse click on element matching given locator.</doc>
+<msg timestamp="20240703 20:27:33.083" level="INFO">Getting element with locator: name:Two</msg>
+<msg timestamp="20240703 20:27:33.083" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x00000184DAB53490&gt;, locator='Calculator and type:WindowControl', name='Calculator', automation_id='', control_type='WindowControl', class_name='ApplicationFrameWindow', left=62, right=398, top=179, bottom=720, width=336, height=541, xcenter=230, ycenter=449)</msg>
+<msg timestamp="20240703 20:27:33.083" level="INFO">Locator 'name:Two' produced matcher: MatchObject(locators=[('Name', 'Two', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:27:33.169" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.ButtonControl object at 0x00000184DAFBDFD0&gt;, locator='name:Two', name='Two', automation_id='num2Button', control_type='ButtonControl', class_name='Button', left=153, right=230, top=604, bottom=655, width=77, height=51, xcenter=191, ycenter=629)</msg>
+<status status="PASS" starttime="20240703 20:27:33.082" endtime="20240703 20:27:33.724"/>
+</kw>
+<kw name="Click" library="RPA.Windows">
+<arg>name:Equals</arg>
+<tag>action</tag>
+<tag>mouse</tag>
+<doc>Mouse click on element matching given locator.</doc>
+<msg timestamp="20240703 20:27:33.726" level="INFO">Getting element with locator: name:Equals</msg>
+<msg timestamp="20240703 20:27:33.726" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x00000184DAB53490&gt;, locator='Calculator and type:WindowControl', name='Calculator', automation_id='', control_type='WindowControl', class_name='ApplicationFrameWindow', left=62, right=398, top=179, bottom=720, width=336, height=541, xcenter=230, ycenter=449)</msg>
+<msg timestamp="20240703 20:27:33.727" level="INFO">Locator 'name:Equals' produced matcher: MatchObject(locators=[('Name', 'Equals', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:27:33.793" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.ButtonControl object at 0x00000184DAFE3A50&gt;, locator='name:Equals', name='Equals', automation_id='equalButton', control_type='ButtonControl', class_name='Button', left=310, right=386, top=657, bottom=708, width=76, height=51, xcenter=348, ycenter=682)</msg>
+<status status="PASS" starttime="20240703 20:27:33.725" endtime="20240703 20:27:34.347"/>
+</kw>
+<status status="PASS" starttime="20240703 20:27:31.769" endtime="20240703 20:27:34.349"/>
+</test>
+<test id="s1-t3" name="Check Result" line="16">
+<kw name="Get Attribute" library="RPA.Windows">
+<var>${result}</var>
+<arg>id:CalculatorResults</arg>
+<arg>Name</arg>
+<doc>Get attribute value of the element defined by the locator.</doc>
+<msg timestamp="20240703 20:27:34.352" level="INFO">Getting element with locator: id:CalculatorResults</msg>
+<msg timestamp="20240703 20:27:34.353" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x00000184DAB53490&gt;, locator='Calculator and type:WindowControl', name='Calculator', automation_id='', control_type='WindowControl', class_name='ApplicationFrameWindow', left=62, right=398, top=179, bottom=720, width=336, height=541, xcenter=230, ycenter=449)</msg>
+<msg timestamp="20240703 20:27:34.354" level="INFO">Locator 'id:CalculatorResults' produced matcher: MatchObject(locators=[('AutomationId', 'CalculatorResults', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:27:34.383" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.TextControl object at 0x00000184DAB82B90&gt;, locator='id:CalculatorResults', name='Display is 3', automation_id='CalculatorResults', control_type='TextControl', class_name='', left=70, right=390, top=283, bottom=358, width=320, height=75, xcenter=230, ycenter=320)</msg>
+<msg timestamp="20240703 20:27:34.384" level="INFO">${result} = Display is 3</msg>
+<status status="PASS" starttime="20240703 20:27:34.352" endtime="20240703 20:27:34.384"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240703 20:27:34.385" level="INFO">Display is 3</msg>
+<status status="PASS" starttime="20240703 20:27:34.385" endtime="20240703 20:27:34.385"/>
+</kw>
+<kw name="Close Current Window" library="RPA.Windows">
+<tag>window</tag>
+<doc>Closes current active window or logs a warning message.</doc>
+<msg timestamp="20240703 20:27:34.386" level="INFO">Closing window with name: Calculator (PID: 4232)</msg>
+<status status="PASS" starttime="20240703 20:27:34.385" endtime="20240703 20:27:34.387"/>
+</kw>
+<status status="PASS" starttime="20240703 20:27:34.351" endtime="20240703 20:27:34.387"/>
+</test>
+<status status="PASS" starttime="20240703 20:27:26.073" endtime="20240703 20:27:34.389"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tasks</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Firstdesktopauto">Firstdesktopauto</stat>
+<stat pass="3" fail="0" skip="0" id="s1" name="Calculator">Calculator</stat>
 </suite>
 </statistics>
 <errors>
