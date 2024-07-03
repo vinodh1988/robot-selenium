@@ -1,218 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.11.2 on win32)" generated="2024-07-02T20:35:10.454119" rpa="false" schemaversion="5">
-<suite id="s1" name="Csvauto" source="E:\robot-basics\csvauto.robot">
-<test id="s1-t1" name="Data Driven CSV Test" line="10">
-<kw name="Read Csv To Array Of Dictionary" owner="FileUtilities">
-<msg time="2024-07-02T20:35:10.507216" level="INFO">@{proclist} = [ {'processid': 'p101', 'processname': 'ProcName21', 'memory': '119 MB'} | {'processid': 'p102', 'processname': 'ProcNAme22', 'memory': '229 MB'} | {'processid': 'p103', 'processname': 'ProcName23', '...</msg>
-<var>@{proclist}</var>
-<arg>${csvpath}</arg>
-<status status="PASS" start="2024-07-02T20:35:10.507216" elapsed="0.000000"/>
+<robot generator="Robot 6.1.1 (Python 3.11.2 on win32)" generated="20240703 20:11:33.822" rpa="false" schemaversion="4">
+<suite id="s1" name="Firstdesktopauto" source="E:\robot-basics\firstdesktopauto.robot">
+<test id="s1-t1" name="Run Applications" line="10">
+<kw name="Run Command">
+<arg>${CALCULATOR}</arg>
+<kw name="Windows Run" library="RPA.Windows">
+<arg>${appname}</arg>
+<tag>window</tag>
+<doc>Use Windows Run window to launch an application.</doc>
+<msg timestamp="20240703 20:11:34.520" level="INFO">Sending keys '{Win}r' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
+<msg timestamp="20240703 20:11:35.114" level="INFO">Sending keys 'calc.exe' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
+<msg timestamp="20240703 20:11:35.783" level="INFO">Sending keys '{Enter}' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
+<status status="PASS" starttime="20240703 20:11:34.519" endtime="20240703 20:11:39.315"/>
 </kw>
-<for flavor="IN">
-<iter>
-<kw name="Log Dictionary" owner="FileUtilities">
-<arg>${logpath}</arg>
-<arg>${proc}</arg>
-<status status="PASS" start="2024-07-02T20:35:10.508216" elapsed="0.000000"/>
+<status status="PASS" starttime="20240703 20:11:34.518" endtime="20240703 20:11:39.315"/>
 </kw>
-<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
-<arg>${logpath}</arg>
-<arg>------------------------------------------</arg>
-<status status="PASS" start="2024-07-02T20:35:10.509219" elapsed="0.000000"/>
+<kw name="Control Window" library="RPA.Windows">
+<arg>Calculator</arg>
+<tag>window</tag>
+<doc>Controls the window defined by the locator.</doc>
+<msg timestamp="20240703 20:11:39.941" level="INFO">Getting element with locator: Calculator and type:WindowControl</msg>
+<msg timestamp="20240703 20:11:39.941" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x0000026B3409AC10&gt;, locator='Calculator and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=1366, top=0, bottom=768, width=1366, height=768, xcenter=683, ycenter=384)</msg>
+<msg timestamp="20240703 20:11:39.942" level="INFO">Locator 'Calculator and type:WindowControl' produced matcher: MatchObject(locators=[('Name', 'Calculator', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:11:40.831" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000026B35A34FD0&gt;, locator='Calculator and type:WindowControl', name='Calculator', automation_id='', control_type='WindowControl', class_name='ApplicationFrameWindow', left=49, right=385, top=69, bottom=610, width=336, height=541, xcenter=217, ycenter=339)</msg>
+<status status="PASS" starttime="20240703 20:11:39.316" endtime="20240703 20:11:41.335"/>
 </kw>
-<var name="${proc}">{'processid': 'p101', 'processname': 'ProcName21', 'memory': '119 MB'}</var>
-<status status="PASS" start="2024-07-02T20:35:10.508216" elapsed="0.001003"/>
-</iter>
-<iter>
-<kw name="Log Dictionary" owner="FileUtilities">
-<arg>${logpath}</arg>
-<arg>${proc}</arg>
-<status status="PASS" start="2024-07-02T20:35:10.509219" elapsed="0.000000"/>
+<kw name="Run Command">
+<arg>${NOTEPAD}</arg>
+<kw name="Windows Run" library="RPA.Windows">
+<arg>${appname}</arg>
+<tag>window</tag>
+<doc>Use Windows Run window to launch an application.</doc>
+<msg timestamp="20240703 20:11:41.337" level="INFO">Sending keys '{Win}r' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
+<msg timestamp="20240703 20:11:41.903" level="INFO">Sending keys 'notepad' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
+<msg timestamp="20240703 20:11:42.563" level="INFO">Sending keys '{Enter}' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
+<status status="PASS" starttime="20240703 20:11:41.337" endtime="20240703 20:11:46.093"/>
 </kw>
-<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
-<arg>${logpath}</arg>
-<arg>------------------------------------------</arg>
-<status status="PASS" start="2024-07-02T20:35:10.509219" elapsed="0.000997"/>
+<status status="PASS" starttime="20240703 20:11:41.336" endtime="20240703 20:11:46.093"/>
 </kw>
-<var name="${proc}">{'processid': 'p102', 'processname': 'ProcNAme22', 'memory': '229 MB'}</var>
-<status status="PASS" start="2024-07-02T20:35:10.509219" elapsed="0.000997"/>
-</iter>
-<iter>
-<kw name="Log Dictionary" owner="FileUtilities">
-<arg>${logpath}</arg>
-<arg>${proc}</arg>
-<status status="PASS" start="2024-07-02T20:35:10.510216" elapsed="0.000000"/>
+<kw name="Control Window" library="RPA.Windows">
+<arg>reportnow.txt - Notepad</arg>
+<tag>window</tag>
+<doc>Controls the window defined by the locator.</doc>
+<msg timestamp="20240703 20:11:46.096" level="INFO">Getting element with locator: reportnow.txt - Notepad and type:WindowControl</msg>
+<msg timestamp="20240703 20:11:46.096" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x0000026B35E38410&gt;, locator='reportnow.txt - Notepad and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=1366, top=0, bottom=768, width=1366, height=768, xcenter=683, ycenter=384)</msg>
+<msg timestamp="20240703 20:11:46.096" level="INFO">Locator 'reportnow.txt - Notepad and type:WindowControl' produced matcher: MatchObject(locators=[('Name', 'reportnow.txt - Notepad', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:11:46.917" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000026B35A360D0&gt;, locator='reportnow.txt - Notepad and type:WindowControl', name='reportnow.txt - Notepad', automation_id='', control_type='WindowControl', class_name='Notepad', left=104, right=1129, top=104, bottom=623, width=1025, height=519, xcenter=616, ycenter=363)</msg>
+<status status="PASS" starttime="20240703 20:11:46.093" endtime="20240703 20:11:47.424"/>
 </kw>
-<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
-<arg>${logpath}</arg>
-<arg>------------------------------------------</arg>
-<status status="PASS" start="2024-07-02T20:35:10.510216" elapsed="0.000000"/>
-</kw>
-<var name="${proc}">{'processid': 'p103', 'processname': 'ProcName23', 'memory': '339 MB'}</var>
-<status status="PASS" start="2024-07-02T20:35:10.510216" elapsed="0.000000"/>
-</iter>
-<iter>
-<kw name="Log Dictionary" owner="FileUtilities">
-<arg>${logpath}</arg>
-<arg>${proc}</arg>
-<status status="PASS" start="2024-07-02T20:35:10.510216" elapsed="0.001000"/>
-</kw>
-<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
-<arg>${logpath}</arg>
-<arg>------------------------------------------</arg>
-<status status="PASS" start="2024-07-02T20:35:10.511216" elapsed="0.000000"/>
-</kw>
-<var name="${proc}">{'processid': 'p104', 'processname': 'ProcName24', 'memory': '449 MB'}</var>
-<status status="PASS" start="2024-07-02T20:35:10.510216" elapsed="0.001000"/>
-</iter>
-<iter>
-<kw name="Log Dictionary" owner="FileUtilities">
-<arg>${logpath}</arg>
-<arg>${proc}</arg>
-<status status="PASS" start="2024-07-02T20:35:10.511216" elapsed="0.000000"/>
-</kw>
-<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
-<arg>${logpath}</arg>
-<arg>------------------------------------------</arg>
-<status status="PASS" start="2024-07-02T20:35:10.511216" elapsed="0.001000"/>
-</kw>
-<var name="${proc}">{'processid': 'p105', 'processname': 'ProcName25', 'memory': '559 MB'}</var>
-<status status="PASS" start="2024-07-02T20:35:10.511216" elapsed="0.001000"/>
-</iter>
-<iter>
-<kw name="Log Dictionary" owner="FileUtilities">
-<arg>${logpath}</arg>
-<arg>${proc}</arg>
-<status status="PASS" start="2024-07-02T20:35:10.512216" elapsed="0.000000"/>
-</kw>
-<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
-<arg>${logpath}</arg>
-<arg>------------------------------------------</arg>
-<status status="PASS" start="2024-07-02T20:35:10.512216" elapsed="0.000000"/>
-</kw>
-<var name="${proc}">{'processid': 'p106', 'processname': 'ProcName26', 'memory': '669 MB'}</var>
-<status status="PASS" start="2024-07-02T20:35:10.512216" elapsed="0.000000"/>
-</iter>
-<iter>
-<kw name="Log Dictionary" owner="FileUtilities">
-<arg>${logpath}</arg>
-<arg>${proc}</arg>
-<status status="PASS" start="2024-07-02T20:35:10.512216" elapsed="0.000000"/>
-</kw>
-<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
-<arg>${logpath}</arg>
-<arg>------------------------------------------</arg>
-<status status="PASS" start="2024-07-02T20:35:10.512216" elapsed="0.001001"/>
-</kw>
-<var name="${proc}">{'processid': 'p107', 'processname': 'ProcName27', 'memory': '779 MB'}</var>
-<status status="PASS" start="2024-07-02T20:35:10.512216" elapsed="0.001001"/>
-</iter>
-<iter>
-<kw name="Log Dictionary" owner="FileUtilities">
-<arg>${logpath}</arg>
-<arg>${proc}</arg>
-<status status="PASS" start="2024-07-02T20:35:10.513217" elapsed="0.000000"/>
-</kw>
-<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
-<arg>${logpath}</arg>
-<arg>------------------------------------------</arg>
-<status status="PASS" start="2024-07-02T20:35:10.513217" elapsed="0.000000"/>
-</kw>
-<var name="${proc}">{'processid': 'p108', 'processname': 'ProcName28', 'memory': '889 MB'}</var>
-<status status="PASS" start="2024-07-02T20:35:10.513217" elapsed="0.000000"/>
-</iter>
-<iter>
-<kw name="Log Dictionary" owner="FileUtilities">
-<arg>${logpath}</arg>
-<arg>${proc}</arg>
-<status status="PASS" start="2024-07-02T20:35:10.513217" elapsed="0.000999"/>
-</kw>
-<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
-<arg>${logpath}</arg>
-<arg>------------------------------------------</arg>
-<status status="PASS" start="2024-07-02T20:35:10.514216" elapsed="0.000000"/>
-</kw>
-<var name="${proc}">{'processid': 'p109', 'processname': 'ProcName29', 'memory': '999 MB'}</var>
-<status status="PASS" start="2024-07-02T20:35:10.513217" elapsed="0.000999"/>
-</iter>
-<iter>
-<kw name="Log Dictionary" owner="FileUtilities">
-<arg>${logpath}</arg>
-<arg>${proc}</arg>
-<status status="PASS" start="2024-07-02T20:35:10.514216" elapsed="0.000000"/>
-</kw>
-<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
-<arg>${logpath}</arg>
-<arg>------------------------------------------</arg>
-<status status="PASS" start="2024-07-02T20:35:10.514216" elapsed="0.000000"/>
-</kw>
-<var name="${proc}">{'processid': 'p110', 'processname': 'ProcName30', 'memory': '009 MB'}</var>
-<status status="PASS" start="2024-07-02T20:35:10.514216" elapsed="0.000000"/>
-</iter>
-<iter>
-<kw name="Log Dictionary" owner="FileUtilities">
-<arg>${logpath}</arg>
-<arg>${proc}</arg>
-<status status="PASS" start="2024-07-02T20:35:10.515222" elapsed="0.000000"/>
-</kw>
-<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
-<arg>${logpath}</arg>
-<arg>------------------------------------------</arg>
-<status status="PASS" start="2024-07-02T20:35:10.515222" elapsed="0.000000"/>
-</kw>
-<var name="${proc}">{'processid': 'p111', 'processname': 'ProcName31', 'memory': '119 MB'}</var>
-<status status="PASS" start="2024-07-02T20:35:10.514216" elapsed="0.001513"/>
-</iter>
-<iter>
-<kw name="Log Dictionary" owner="FileUtilities">
-<arg>${logpath}</arg>
-<arg>${proc}</arg>
-<status status="PASS" start="2024-07-02T20:35:10.515729" elapsed="0.000000"/>
-</kw>
-<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
-<arg>${logpath}</arg>
-<arg>------------------------------------------</arg>
-<status status="PASS" start="2024-07-02T20:35:10.515729" elapsed="0.000000"/>
-</kw>
-<var name="${proc}">{'processid': 'p112', 'processname': 'ProcName32', 'memory': '229 MB'}</var>
-<status status="PASS" start="2024-07-02T20:35:10.515729" elapsed="0.000000"/>
-</iter>
-<iter>
-<kw name="Log Dictionary" owner="FileUtilities">
-<arg>${logpath}</arg>
-<arg>${proc}</arg>
-<status status="PASS" start="2024-07-02T20:35:10.515729" elapsed="0.000000"/>
-</kw>
-<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
-<arg>${logpath}</arg>
-<arg>------------------------------------------</arg>
-<status status="PASS" start="2024-07-02T20:35:10.515729" elapsed="0.001015"/>
-</kw>
-<var name="${proc}">{'processid': 'p113', 'processname': 'ProcName33', 'memory': '339 MB'}</var>
-<status status="PASS" start="2024-07-02T20:35:10.515729" elapsed="0.001015"/>
-</iter>
-<iter>
-<kw name="Log Dictionary" owner="FileUtilities">
-<arg>${logpath}</arg>
-<arg>${proc}</arg>
-<status status="PASS" start="2024-07-02T20:35:10.516744" elapsed="0.000000"/>
-</kw>
-<kw name="Write Text To Log File" owner="RobotLocalFileUtils">
-<arg>${logpath}</arg>
-<arg>------------------------------------------</arg>
-<status status="PASS" start="2024-07-02T20:35:10.516744" elapsed="0.000000"/>
-</kw>
-<var name="${proc}">{'processid': 'p114', 'processname': 'ProcName34', 'memory': '449 MB'}</var>
-<status status="PASS" start="2024-07-02T20:35:10.516744" elapsed="0.000000"/>
-</iter>
-<var>${proc}</var>
-<value>@{proclist}</value>
-<status status="PASS" start="2024-07-02T20:35:10.508216" elapsed="0.008528"/>
-</for>
-<status status="PASS" start="2024-07-02T20:35:10.506212" elapsed="0.011537"/>
+<status status="PASS" starttime="20240703 20:11:34.516" endtime="20240703 20:11:47.424"/>
 </test>
-<doc>Login Functionality</doc>
-<status status="PASS" start="2024-07-02T20:35:10.456302" elapsed="0.061447"/>
+<doc>RPA Windows Application</doc>
+<status status="PASS" starttime="20240703 20:11:33.825" endtime="20240703 20:11:47.427"/>
 </suite>
 <statistics>
 <total>
@@ -221,7 +60,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Csvauto">Csvauto</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Firstdesktopauto">Firstdesktopauto</stat>
 </suite>
 </statistics>
 <errors>
