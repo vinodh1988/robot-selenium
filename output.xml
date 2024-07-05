@@ -1,96 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.2 on win32)" generated="20240705 20:24:14.449" rpa="false" schemaversion="4">
-<suite id="s1" name="Draganddroop" source="E:\robot-basics\draganddroop.robot">
-<test id="s1-t1" name="Open MSPAINT" line="6">
+<robot generator="Robot 6.1.1 (Python 3.11.2 on win32)" generated="20240705 20:43:06.125" rpa="false" schemaversion="4">
+<suite id="s1" name="handlingClipBoard" source="E:\robot-basics\handlingClipBoard.robot">
+<test id="s1-t1" name="Open Notepad" line="6">
 <kw name="Windows Run" library="RPA.Windows">
-<arg>mspaint</arg>
+<arg>e:\\robotlogs\\csvlogs.log</arg>
 <tag>window</tag>
 <doc>Use Windows Run window to launch an application.</doc>
-<msg timestamp="20240705 20:24:15.546" level="INFO">Sending keys '{Win}r' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
-<msg timestamp="20240705 20:24:16.106" level="INFO">Sending keys 'mspaint' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
-<msg timestamp="20240705 20:24:16.742" level="INFO">Sending keys '{Enter}' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
-<status status="PASS" starttime="20240705 20:24:15.545" endtime="20240705 20:24:20.268"/>
+<msg timestamp="20240705 20:43:07.035" level="INFO">Sending keys '{Win}r' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
+<msg timestamp="20240705 20:43:07.584" level="INFO">Sending keys 'e:\\robotlogs\\csvlogs.log' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
+<msg timestamp="20240705 20:43:08.420" level="INFO">Sending keys '{Enter}' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
+<status status="PASS" starttime="20240705 20:43:07.035" endtime="20240705 20:43:11.945"/>
 </kw>
 <kw name="Control Window" library="RPA.Windows">
-<arg>Untitled - Paint</arg>
+<arg>csvlogs.log - Notepad</arg>
 <tag>window</tag>
 <doc>Controls the window defined by the locator.</doc>
-<msg timestamp="20240705 20:24:20.281" level="INFO">Getting element with locator: Untitled - Paint and type:WindowControl</msg>
-<msg timestamp="20240705 20:24:20.281" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x0000019EC517A690&gt;, locator='Untitled - Paint and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=1366, top=0, bottom=768, width=1366, height=768, xcenter=683, ycenter=384)</msg>
-<msg timestamp="20240705 20:24:20.281" level="INFO">Locator 'Untitled - Paint and type:WindowControl' produced matcher: MatchObject(locators=[('Name', 'Untitled - Paint', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
-<msg timestamp="20240705 20:24:20.681" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000019EC10C6550&gt;, locator='Untitled - Paint and type:WindowControl', name='Untitled - Paint', automation_id='', control_type='WindowControl', class_name='MSPaintApp', left=0, right=1092, top=81, bottom=695, width=1092, height=614, xcenter=546, ycenter=388)</msg>
-<status status="PASS" starttime="20240705 20:24:20.269" endtime="20240705 20:24:21.184"/>
+<msg timestamp="20240705 20:43:11.953" level="INFO">Getting element with locator: csvlogs.log - Notepad and type:WindowControl</msg>
+<msg timestamp="20240705 20:43:11.953" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x0000024D71577C90&gt;, locator='csvlogs.log - Notepad and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=1366, top=0, bottom=768, width=1366, height=768, xcenter=683, ycenter=384)</msg>
+<msg timestamp="20240705 20:43:11.953" level="INFO">Locator 'csvlogs.log - Notepad and type:WindowControl' produced matcher: MatchObject(locators=[('Name', 'csvlogs.log - Notepad', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240705 20:43:12.213" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000024D71347B90&gt;, locator='csvlogs.log - Notepad and type:WindowControl', name='csvlogs.log - Notepad', automation_id='', control_type='WindowControl', class_name='Notepad', left=52, right=934, top=150, bottom=669, width=882, height=519, xcenter=493, ycenter=409)</msg>
+<status status="PASS" starttime="20240705 20:43:11.945" endtime="20240705 20:43:12.717"/>
 </kw>
-<status status="PASS" starttime="20240705 20:24:15.544" endtime="20240705 20:24:21.185"/>
+<status status="PASS" starttime="20240705 20:43:07.034" endtime="20240705 20:43:12.717"/>
 </test>
-<test id="s1-t2" name="Click the Control and Select Rectangle" line="9">
-<kw name="Double Click" library="RPA.Windows">
-<arg>id:CollapsedButton</arg>
+<test id="s1-t2" name="Select all and Copy Text" line="9">
+<kw name="Send Keys" library="RPA.Windows">
+<arg>name:"Text editor"</arg>
+<arg>keys={Ctrl}{a}</arg>
 <tag>action</tag>
-<tag>mouse</tag>
-<doc>Double mouse click on element matching given locator.</doc>
-<msg timestamp="20240705 20:24:21.189" level="INFO">Getting element with locator: id:CollapsedButton</msg>
-<msg timestamp="20240705 20:24:21.189" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000019EC10C6550&gt;, locator='Untitled - Paint and type:WindowControl', name='Untitled - Paint', automation_id='', control_type='WindowControl', class_name='MSPaintApp', left=0, right=1092, top=81, bottom=695, width=1092, height=614, xcenter=546, ycenter=388)</msg>
-<msg timestamp="20240705 20:24:21.189" level="INFO">Locator 'id:CollapsedButton' produced matcher: MatchObject(locators=[('AutomationId', 'CollapsedButton', 0)], _classes=set(), max_level=0)</msg>
-<msg timestamp="20240705 20:24:21.322" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.ButtonControl object at 0x0000019EC5188E90&gt;, locator='id:CollapsedButton', name='Shapes', automation_id='CollapsedButton', control_type='ButtonControl', class_name='Button', left=462, right=496, top=174, bottom=220, width=34, height=46, xcenter=479, ycenter=197)</msg>
-<status status="PASS" starttime="20240705 20:24:21.187" endtime="20240705 20:24:22.228"/>
+<tag>keyboard</tag>
+<doc>Send keys to desktop, current window or to Control element
+defined by given locator.</doc>
+<msg timestamp="20240705 20:43:12.722" level="INFO">Getting element with locator: name:"Text editor"</msg>
+<msg timestamp="20240705 20:43:12.723" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000024D71347B90&gt;, locator='csvlogs.log - Notepad and type:WindowControl', name='csvlogs.log - Notepad', automation_id='', control_type='WindowControl', class_name='Notepad', left=52, right=934, top=150, bottom=669, width=882, height=519, xcenter=493, ycenter=409)</msg>
+<msg timestamp="20240705 20:43:12.723" level="INFO">Locator 'name:"Text editor"' produced matcher: MatchObject(locators=[('Name', 'Text editor', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240705 20:43:12.757" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.DocumentControl object at 0x0000024D71588F50&gt;, locator='name:"Text editor"', name='Text editor', automation_id='', control_type='DocumentControl', class_name='RichEditD2DPT', left=58, right=928, top=225, bottom=631, width=870, height=406, xcenter=493, ycenter=428)</msg>
+<msg timestamp="20240705 20:43:12.759" level="INFO">Sending keys '{Ctrl}{a}' to element: ControlType: DocumentControl    ClassName: RichEditD2DPT    AutomationId:     Rect: (58,225,928,631)[870x406]    Name: 'Text editor'    Handle: 0x1D1AAA(1907370)</msg>
+<status status="PASS" starttime="20240705 20:43:12.720" endtime="20240705 20:43:13.306"/>
 </kw>
-<kw name="Set Wait Time" library="RPA.Windows">
-<arg>0.5</arg>
+<kw name="Send Keys" library="RPA.Windows">
+<arg>name:"Text editor"</arg>
+<arg>keys={Ctrl}{c}</arg>
 <tag>action</tag>
-<doc>Set library wait time for action keywords.</doc>
-<msg timestamp="20240705 20:24:22.230" level="INFO">Previous wait time: 0.500000</msg>
-<msg timestamp="20240705 20:24:22.230" level="INFO">Current wait time: 0.500000</msg>
-<status status="PASS" starttime="20240705 20:24:22.229" endtime="20240705 20:24:22.230"/>
+<tag>keyboard</tag>
+<doc>Send keys to desktop, current window or to Control element
+defined by given locator.</doc>
+<msg timestamp="20240705 20:43:13.309" level="INFO">Getting element with locator: name:"Text editor"</msg>
+<msg timestamp="20240705 20:43:13.310" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000024D71347B90&gt;, locator='csvlogs.log - Notepad and type:WindowControl', name='csvlogs.log - Notepad', automation_id='', control_type='WindowControl', class_name='Notepad', left=52, right=934, top=150, bottom=669, width=882, height=519, xcenter=493, ycenter=409)</msg>
+<msg timestamp="20240705 20:43:13.310" level="INFO">Locator 'name:"Text editor"' produced matcher: MatchObject(locators=[('Name', 'Text editor', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240705 20:43:13.334" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.DocumentControl object at 0x0000024D71589510&gt;, locator='name:"Text editor"', name='Text editor', automation_id='', control_type='DocumentControl', class_name='RichEditD2DPT', left=58, right=928, top=225, bottom=631, width=870, height=406, xcenter=493, ycenter=428)</msg>
+<msg timestamp="20240705 20:43:13.335" level="INFO">Sending keys '{Ctrl}{c}' to element: ControlType: DocumentControl    ClassName: RichEditD2DPT    AutomationId:     Rect: (58,225,928,631)[870x406]    Name: 'Text editor'    Handle: 0x1D1AAA(1907370)</msg>
+<status status="PASS" starttime="20240705 20:43:13.307" endtime="20240705 20:43:13.910"/>
 </kw>
-<kw name="Click" library="RPA.Windows">
-<arg>name:Rectangle</arg>
-<tag>action</tag>
-<tag>mouse</tag>
-<doc>Mouse click on element matching given locator.</doc>
-<msg timestamp="20240705 20:24:22.232" level="INFO">Getting element with locator: name:Rectangle</msg>
-<msg timestamp="20240705 20:24:22.233" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000019EC10C6550&gt;, locator='Untitled - Paint and type:WindowControl', name='Untitled - Paint', automation_id='', control_type='WindowControl', class_name='MSPaintApp', left=0, right=1092, top=81, bottom=695, width=1092, height=614, xcenter=546, ycenter=388)</msg>
-<msg timestamp="20240705 20:24:22.233" level="INFO">Locator 'name:Rectangle' produced matcher: MatchObject(locators=[('Name', 'Rectangle', 0)], _classes=set(), max_level=0)</msg>
-<msg timestamp="20240705 20:24:32.428" level="INFO">2024-07-05 20:24:32.427 locators.py[274] _get_control_from_params -&gt; Find Control Timeout(10s): {Name: 'Rectangle'}</msg>
-<msg timestamp="20240705 20:24:32.428" level="FAIL">ElementNotFound: Element not found with locator 'name:Rectangle'</msg>
-<status status="FAIL" starttime="20240705 20:24:22.231" endtime="20240705 20:24:32.432"/>
-</kw>
-<status status="FAIL" starttime="20240705 20:24:21.187" endtime="20240705 20:24:32.433">ElementNotFound: Element not found with locator 'name:Rectangle'</status>
+<status status="PASS" starttime="20240705 20:43:12.720" endtime="20240705 20:43:13.910"/>
 </test>
-<test id="s1-t3" name="Move the mouse pointer and Drag and Drop" line="13">
-<kw name="Move Mouse" library="RPA.Desktop">
-<arg>offset:0,100</arg>
-<doc>Move mouse to given coordinates.</doc>
-<msg timestamp="20240705 20:24:32.435" level="INFO">Resolving locator: offset:0,100</msg>
-<msg timestamp="20240705 20:24:32.435" level="INFO">Moving mouse to (479, 297)</msg>
-<status status="PASS" starttime="20240705 20:24:32.434" endtime="20240705 20:24:32.435"/>
+<test id="s1-t3" name="Read The Clipboard" line="12">
+<kw name="Get Clipboard Value" library="RPA.Desktop">
+<var>${var}</var>
+<doc>Read current value from system clipboard.</doc>
+<msg timestamp="20240705 20:43:13.915" level="INFO">${var} = 2024-07-02 20:35:10.508216 INFO - processid - p101 
+ 2024-07-02 20:35:10.508216 INFO - processname - ProcName21 
+ 2024-07-02 20:35:10.508216 INFO - memory - 119 MB 
+ -------------------------------...</msg>
+<status status="PASS" starttime="20240705 20:43:13.913" endtime="20240705 20:43:13.916"/>
 </kw>
-<kw name="Drag And Drop" library="RPA.Desktop">
-<arg>offset:0,0</arg>
-<arg>offset:200,200</arg>
-<doc>Drag mouse from source to destination while holding the left mouse button.</doc>
-<msg timestamp="20240705 20:24:32.436" level="INFO">Resolving locator: offset:0,0</msg>
-<msg timestamp="20240705 20:24:32.436" level="INFO">Resolving locator: offset:200,200</msg>
-<msg timestamp="20240705 20:24:32.437" level="INFO">Dragging from (479, 297) to (679, 497)</msg>
-<msg timestamp="20240705 20:24:32.535" level="INFO">Moving mouse to (479, 297)</msg>
-<msg timestamp="20240705 20:24:32.636" level="INFO">Pressing down mouse button: Button.left</msg>
-<msg timestamp="20240705 20:24:34.653" level="INFO">Moving mouse to (679, 497)</msg>
-<msg timestamp="20240705 20:24:35.155" level="INFO">Releasing mouse button: Button.left</msg>
-<status status="PASS" starttime="20240705 20:24:32.435" endtime="20240705 20:24:35.156"/>
+<kw name="Log" library="BuiltIn">
+<arg>${var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240705 20:43:13.916" level="INFO">2024-07-02 20:35:10.508216 INFO - processid - p101 
+ 2024-07-02 20:35:10.508216 INFO - processname - ProcName21 
+ 2024-07-02 20:35:10.508216 INFO - memory - 119 MB 
+ ------------------------------------------
+2024-07-02 20:35:10.509219 INFO - processid - p102 
+ 2024-07-02 20:35:10.509219 INFO - processname - ProcNAme22 
+ 2024-07-02 20:35:10.509219 INFO - memory - 229 MB 
+ ------------------------------------------
+2024-07-02 20:35:10.510216 INFO - processid - p103 
+ 2024-07-02 20:35:10.510216 INFO - processname - ProcName23 
+ 2024-07-02 20:35:10.510216 INFO - memory - 339 MB 
+ ------------------------------------------
+2024-07-02 20:35:10.510216 INFO - processid - p104 
+ 2024-07-02 20:35:10.510216 INFO - processname - ProcName24 
+ 2024-07-02 20:35:10.510216 INFO - memory - 449 MB 
+ ------------------------------------------
+2024-07-02 20:35:10.511216 INFO - processid - p105 
+ 2024-07-02 20:35:10.511216 INFO - processname - ProcName25 
+ 2024-07-02 20:35:10.511216 INFO - memory - 559 MB 
+ ------------------------------------------
+2024-07-02 20:35:10.512216 INFO - processid - p106 
+ 2024-07-02 20:35:10.512216 INFO - processname - ProcName26 
+ 2024-07-02 20:35:10.512216 INFO - memory - 669 MB 
+ ------------------------------------------
+2024-07-02 20:35:10.512216 INFO - processid - p107 
+ 2024-07-02 20:35:10.512216 INFO - processname - ProcName27 
+ 2024-07-02 20:35:10.512216 INFO - memory - 779 MB 
+ ------------------------------------------
+2024-07-02 20:35:10.513217 INFO - processid - p108 
+ 2024-07-02 20:35:10.513217 INFO - processname - ProcName28 
+ 2024-07-02 20:35:10.513217 INFO - memory - 889 MB 
+ ------------------------------------------
+2024-07-02 20:35:10.514216 INFO - processid - p109 
+ 2024-07-02 20:35:10.514216 INFO - processname - ProcName29 
+ 2024-07-02 20:35:10.514216 INFO - memory - 999 MB 
+ ------------------------------------------
+2024-07-02 20:35:10.514216 INFO - processid - p110 
+ 2024-07-02 20:35:10.514216 INFO - processname - ProcName30 
+ 2024-07-02 20:35:10.514216 INFO - memory - 009 MB 
+ ------------------------------------------
+2024-07-02 20:35:10.515222 INFO - processid - p111 
+ 2024-07-02 20:35:10.515222 INFO - processname - ProcName31 
+ 2024-07-02 20:35:10.515222 INFO - memory - 119 MB 
+ ------------------------------------------
+2024-07-02 20:35:10.515729 INFO - processid - p112 
+ 2024-07-02 20:35:10.515729 INFO - processname - ProcName32 
+ 2024-07-02 20:35:10.515729 INFO - memory - 229 MB 
+ ------------------------------------------
+2024-07-02 20:35:10.515729 INFO - processid - p113 
+ 2024-07-02 20:35:10.515729 INFO - processname - ProcName33 
+ 2024-07-02 20:35:10.515729 INFO - memory - 339 MB 
+ ------------------------------------------
+2024-07-02 20:35:10.516744 INFO - processid - p114 
+ 2024-07-02 20:35:10.516744 INFO - processname - ProcName34 
+ 2024-07-02 20:35:10.516744 INFO - memory - 449 MB 
+ ------------------------------------------
+</msg>
+<status status="PASS" starttime="20240705 20:43:13.916" endtime="20240705 20:43:13.917"/>
 </kw>
-<status status="PASS" starttime="20240705 20:24:32.434" endtime="20240705 20:24:35.157"/>
+<status status="PASS" starttime="20240705 20:43:13.912" endtime="20240705 20:43:13.917"/>
 </test>
-<doc>Drag    and Drop Scenario</doc>
-<status status="FAIL" starttime="20240705 20:24:14.451" endtime="20240705 20:24:35.158"/>
+<test id="s1-t4" name="Close Window" line="15">
+<kw name="Close Current Window" library="RPA.Windows">
+<tag>window</tag>
+<doc>Closes current active window or logs a warning message.</doc>
+<msg timestamp="20240705 20:43:13.921" level="INFO">Closing window with name: csvlogs.log - Notepad (PID: 26932)</msg>
+<status status="PASS" starttime="20240705 20:43:13.919" endtime="20240705 20:43:13.923"/>
+</kw>
+<status status="PASS" starttime="20240705 20:43:13.919" endtime="20240705 20:43:13.923"/>
+</test>
+<status status="PASS" starttime="20240705 20:43:06.127" endtime="20240705 20:43:13.925"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="1" skip="0">All Tests</stat>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="1" skip="0" id="s1" name="Draganddroop">Draganddroop</stat>
+<stat pass="4" fail="0" skip="0" id="s1" name="handlingClipBoard">handlingClipBoard</stat>
 </suite>
 </statistics>
 <errors>
