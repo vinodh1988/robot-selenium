@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.2 on win32)" generated="20240703 20:56:35.739" rpa="false" schemaversion="4">
+<suite id="s1" name="Dxdiagdemo" source="E:\robot-basics\dxdiagdemo.robot">
+<test id="s1-t1" name="Open Dxdiag and Set Focus" line="9">
+<kw name="Windows Run" library="RPA.Windows">
+<arg>${dxdiag}</arg>
+<tag>window</tag>
+<doc>Use Windows Run window to launch an application.</doc>
+<msg timestamp="20240703 20:56:36.299" level="INFO">Sending keys '{Win}r' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
+<msg timestamp="20240703 20:56:36.849" level="INFO">Sending keys 'dxdiag' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
+<msg timestamp="20240703 20:56:37.451" level="INFO">Sending keys '{Enter}' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
+<status status="PASS" starttime="20240703 20:56:36.299" endtime="20240703 20:56:40.979"/>
+</kw>
+<kw name="Control Window" library="RPA.Windows">
+<arg>DirectX Diagnostic Tool</arg>
+<tag>window</tag>
+<doc>Controls the window defined by the locator.</doc>
+<msg timestamp="20240703 20:56:41.336" level="INFO">Getting element with locator: DirectX Diagnostic Tool and type:WindowControl</msg>
+<msg timestamp="20240703 20:56:41.336" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x0000020F70C16650&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=1366, top=0, bottom=768, width=1366, height=768, xcenter=683, ycenter=384)</msg>
+<msg timestamp="20240703 20:56:41.337" level="INFO">Locator 'DirectX Diagnostic Tool and type:WindowControl' produced matcher: MatchObject(locators=[('Name', 'DirectX Diagnostic Tool', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:56:41.427" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F70C17390&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
+<status status="PASS" starttime="20240703 20:56:40.980" endtime="20240703 20:56:41.928"/>
+</kw>
+<status status="PASS" starttime="20240703 20:56:36.298" endtime="20240703 20:56:41.929"/>
+</test>
+<test id="s1-t2" name="Check All the tabs" line="12">
+<kw name="Click" library="RPA.Windows">
+<arg>id:5000</arg>
+<tag>action</tag>
+<tag>mouse</tag>
+<doc>Mouse click on element matching given locator.</doc>
+<msg timestamp="20240703 20:56:41.933" level="INFO">Getting element with locator: id:5000</msg>
+<msg timestamp="20240703 20:56:41.933" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F70C17390&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
+<msg timestamp="20240703 20:56:41.933" level="INFO">Locator 'id:5000' produced matcher: MatchObject(locators=[('AutomationId', '5000', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:56:42.094" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.ButtonControl object at 0x0000020F6ECEB490&gt;, locator='id:5000', name='Next Page', automation_id='5000', control_type='ButtonControl', class_name='Button', left=640, right=768, top=587, bottom=610, width=128, height=23, xcenter=704, ycenter=598)</msg>
+<status status="PASS" starttime="20240703 20:56:41.931" endtime="20240703 20:56:42.655"/>
+</kw>
+<kw name="Control Window" library="RPA.Windows">
+<arg>DirectX Diagnostic Tool</arg>
+<tag>window</tag>
+<doc>Controls the window defined by the locator.</doc>
+<msg timestamp="20240703 20:56:42.664" level="INFO">Getting element with locator: DirectX Diagnostic Tool and type:WindowControl</msg>
+<msg timestamp="20240703 20:56:42.665" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x0000020F7105FF10&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=1366, top=0, bottom=768, width=1366, height=768, xcenter=683, ycenter=384)</msg>
+<msg timestamp="20240703 20:56:42.665" level="INFO">Locator 'DirectX Diagnostic Tool and type:WindowControl' produced matcher: MatchObject(locators=[('Name', 'DirectX Diagnostic Tool', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:56:42.754" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F7105A050&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
+<status status="PASS" starttime="20240703 20:56:42.657" endtime="20240703 20:56:43.256"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240703 20:56:48.257" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240703 20:56:43.257" endtime="20240703 20:56:48.257"/>
+</kw>
+<kw name="Click" library="RPA.Windows">
+<arg>id:5000</arg>
+<tag>action</tag>
+<tag>mouse</tag>
+<doc>Mouse click on element matching given locator.</doc>
+<msg timestamp="20240703 20:56:48.260" level="INFO">Getting element with locator: id:5000</msg>
+<msg timestamp="20240703 20:56:48.260" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F7105A050&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
+<msg timestamp="20240703 20:56:48.260" level="INFO">Locator 'id:5000' produced matcher: MatchObject(locators=[('AutomationId', '5000', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:56:48.443" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.ButtonControl object at 0x0000020F71067550&gt;, locator='id:5000', name='Next Page', automation_id='5000', control_type='ButtonControl', class_name='Button', left=640, right=768, top=587, bottom=610, width=128, height=23, xcenter=704, ycenter=598)</msg>
+<status status="PASS" starttime="20240703 20:56:48.259" endtime="20240703 20:56:48.998"/>
+</kw>
+<kw name="Control Window" library="RPA.Windows">
+<arg>DirectX Diagnostic Tool</arg>
+<tag>window</tag>
+<doc>Controls the window defined by the locator.</doc>
+<msg timestamp="20240703 20:56:49.004" level="INFO">Getting element with locator: DirectX Diagnostic Tool and type:WindowControl</msg>
+<msg timestamp="20240703 20:56:49.004" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x0000020F71067F10&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=1366, top=0, bottom=768, width=1366, height=768, xcenter=683, ycenter=384)</msg>
+<msg timestamp="20240703 20:56:49.004" level="INFO">Locator 'DirectX Diagnostic Tool and type:WindowControl' produced matcher: MatchObject(locators=[('Name', 'DirectX Diagnostic Tool', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:56:49.042" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F70525CD0&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
+<status status="PASS" starttime="20240703 20:56:48.999" endtime="20240703 20:56:49.543"/>
+</kw>
+<kw name="Click" library="RPA.Windows">
+<arg>id:5000</arg>
+<tag>action</tag>
+<tag>mouse</tag>
+<doc>Mouse click on element matching given locator.</doc>
+<msg timestamp="20240703 20:56:49.546" level="INFO">Getting element with locator: id:5000</msg>
+<msg timestamp="20240703 20:56:49.546" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F70525CD0&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
+<msg timestamp="20240703 20:56:49.546" level="INFO">Locator 'id:5000' produced matcher: MatchObject(locators=[('AutomationId', '5000', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:56:49.645" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.ButtonControl object at 0x0000020F70C17D90&gt;, locator='id:5000', name='Next Page', automation_id='5000', control_type='ButtonControl', class_name='Button', left=640, right=768, top=587, bottom=610, width=128, height=23, xcenter=704, ycenter=598)</msg>
+<status status="PASS" starttime="20240703 20:56:49.544" endtime="20240703 20:56:50.200"/>
+</kw>
+<kw name="Control Window" library="RPA.Windows">
+<arg>DirectX Diagnostic Tool</arg>
+<tag>window</tag>
+<doc>Controls the window defined by the locator.</doc>
+<msg timestamp="20240703 20:56:50.204" level="INFO">Getting element with locator: DirectX Diagnostic Tool and type:WindowControl</msg>
+<msg timestamp="20240703 20:56:50.204" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x0000020F70C169D0&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=1366, top=0, bottom=768, width=1366, height=768, xcenter=683, ycenter=384)</msg>
+<msg timestamp="20240703 20:56:50.204" level="INFO">Locator 'DirectX Diagnostic Tool and type:WindowControl' produced matcher: MatchObject(locators=[('Name', 'DirectX Diagnostic Tool', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:56:50.241" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F71066610&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
+<status status="PASS" starttime="20240703 20:56:50.201" endtime="20240703 20:56:50.742"/>
+</kw>
+<kw name="Click" library="RPA.Windows">
+<arg>id:5000</arg>
+<tag>action</tag>
+<tag>mouse</tag>
+<doc>Mouse click on element matching given locator.</doc>
+<msg timestamp="20240703 20:56:50.744" level="INFO">Getting element with locator: id:5000</msg>
+<msg timestamp="20240703 20:56:50.744" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F71066610&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
+<msg timestamp="20240703 20:56:50.744" level="INFO">Locator 'id:5000' produced matcher: MatchObject(locators=[('AutomationId', '5000', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:56:50.838" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.ButtonControl object at 0x0000020F710A0110&gt;, locator='id:5000', name='Next Page', automation_id='5000', control_type='ButtonControl', class_name='Button', left=640, right=768, top=587, bottom=610, width=128, height=23, xcenter=704, ycenter=598)</msg>
+<status status="PASS" starttime="20240703 20:56:50.742" endtime="20240703 20:56:51.393"/>
+</kw>
+<kw name="Control Window" library="RPA.Windows">
+<arg>DirectX Diagnostic Tool</arg>
+<tag>window</tag>
+<doc>Controls the window defined by the locator.</doc>
+<msg timestamp="20240703 20:56:51.396" level="INFO">Getting element with locator: DirectX Diagnostic Tool and type:WindowControl</msg>
+<msg timestamp="20240703 20:56:51.396" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x0000020F710A0750&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=1366, top=0, bottom=768, width=1366, height=768, xcenter=683, ycenter=384)</msg>
+<msg timestamp="20240703 20:56:51.396" level="INFO">Locator 'DirectX Diagnostic Tool and type:WindowControl' produced matcher: MatchObject(locators=[('Name', 'DirectX Diagnostic Tool', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:56:51.443" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F710A0F90&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
+<status status="PASS" starttime="20240703 20:56:51.394" endtime="20240703 20:56:51.944"/>
+</kw>
+<status status="PASS" starttime="20240703 20:56:41.931" endtime="20240703 20:56:51.945"/>
+</test>
+<test id="s1-t3" name="Click Save Information and Create File" line="22">
+<kw name="Click" library="RPA.Windows">
+<arg>id:5001</arg>
+<tag>action</tag>
+<tag>mouse</tag>
+<doc>Mouse click on element matching given locator.</doc>
+<msg timestamp="20240703 20:56:51.950" level="INFO">Getting element with locator: id:5001</msg>
+<msg timestamp="20240703 20:56:51.950" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F710A0F90&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
+<msg timestamp="20240703 20:56:51.950" level="INFO">Locator 'id:5001' produced matcher: MatchObject(locators=[('AutomationId', '5001', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:56:52.075" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.ButtonControl object at 0x0000020F710A29D0&gt;, locator='id:5001', name='Save All Information...', automation_id='5001', control_type='ButtonControl', class_name='Button', left=773, right=901, top=587, bottom=610, width=128, height=23, xcenter=837, ycenter=598)</msg>
+<status status="PASS" starttime="20240703 20:56:51.949" endtime="20240703 20:56:52.630"/>
+</kw>
+<kw name="Control Window" library="RPA.Windows">
+<arg>Save As</arg>
+<tag>window</tag>
+<doc>Controls the window defined by the locator.</doc>
+<msg timestamp="20240703 20:56:52.636" level="INFO">Getting element with locator: Save As and type:WindowControl</msg>
+<msg timestamp="20240703 20:56:52.636" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x0000020F710A2C10&gt;, locator='Save As and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=1366, top=0, bottom=768, width=1366, height=768, xcenter=683, ycenter=384)</msg>
+<msg timestamp="20240703 20:56:52.636" level="INFO">Locator 'Save As and type:WindowControl' produced matcher: MatchObject(locators=[('Name', 'Save As', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:56:52.818" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F6EB82250&gt;, locator='Save As and type:WindowControl', name='Save As', automation_id='', control_type='WindowControl', class_name='#32770', left=320, right=1003, top=121, bottom=601, width=683, height=480, xcenter=661, ycenter=361)</msg>
+<status status="PASS" starttime="20240703 20:56:52.630" endtime="20240703 20:56:53.319"/>
+</kw>
+<kw name="Send Keys" library="RPA.Windows">
+<arg>id:1001</arg>
+<arg>E:</arg>
+<arg>send_enter=${True}</arg>
+<tag>action</tag>
+<tag>keyboard</tag>
+<doc>Send keys to desktop, current window or to Control element
+defined by given locator.</doc>
+<msg timestamp="20240703 20:56:53.323" level="INFO">Getting element with locator: id:1001</msg>
+<msg timestamp="20240703 20:56:53.323" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F6EB82250&gt;, locator='Save As and type:WindowControl', name='Save As', automation_id='', control_type='WindowControl', class_name='#32770', left=320, right=1003, top=121, bottom=601, width=683, height=480, xcenter=661, ycenter=361)</msg>
+<msg timestamp="20240703 20:56:53.323" level="INFO">Locator 'id:1001' produced matcher: MatchObject(locators=[('AutomationId', '1001', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:56:53.739" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.EditControl object at 0x0000020F7105B350&gt;, locator='id:1001', name='File name:', automation_id='1001', control_type='EditControl', class_name='Edit', left=456, right=970, top=490, bottom=507, width=514, height=17, xcenter=713, ycenter=498)</msg>
+<msg timestamp="20240703 20:56:53.741" level="INFO">Sending keys 'E:{Enter}' to element: ControlType: EditControl    ClassName: Edit    AutomationId: 1001    Rect: (456,490,970,507)[514x17]    Name: 'File name:'    Handle: 0xA19A2(661922)</msg>
+<status status="PASS" starttime="20240703 20:56:53.320" endtime="20240703 20:56:54.304"/>
+</kw>
+<kw name="Send Keys" library="RPA.Windows">
+<arg>id:1001</arg>
+<arg>keys={Ctrl}{a}</arg>
+<tag>action</tag>
+<tag>keyboard</tag>
+<doc>Send keys to desktop, current window or to Control element
+defined by given locator.</doc>
+<msg timestamp="20240703 20:56:54.306" level="INFO">Getting element with locator: id:1001</msg>
+<msg timestamp="20240703 20:56:54.306" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F6EB82250&gt;, locator='Save As and type:WindowControl', name='Save As', automation_id='', control_type='WindowControl', class_name='#32770', left=320, right=1003, top=121, bottom=601, width=683, height=480, xcenter=661, ycenter=361)</msg>
+<msg timestamp="20240703 20:56:54.306" level="INFO">Locator 'id:1001' produced matcher: MatchObject(locators=[('AutomationId', '1001', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:56:54.605" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.EditControl object at 0x0000020F710A0D10&gt;, locator='id:1001', name='File name:', automation_id='1001', control_type='EditControl', class_name='Edit', left=456, right=970, top=490, bottom=507, width=514, height=17, xcenter=713, ycenter=498)</msg>
+<msg timestamp="20240703 20:56:54.607" level="INFO">Sending keys '{Ctrl}{a}' to element: ControlType: EditControl    ClassName: Edit    AutomationId: 1001    Rect: (456,490,970,507)[514x17]    Name: 'File name:'    Handle: 0xA19A2(661922)</msg>
+<status status="PASS" starttime="20240703 20:56:54.304" endtime="20240703 20:56:55.153"/>
+</kw>
+<kw name="Send Keys" library="RPA.Windows">
+<arg>id:1001</arg>
+<arg>keys={BACK}</arg>
+<tag>action</tag>
+<tag>keyboard</tag>
+<doc>Send keys to desktop, current window or to Control element
+defined by given locator.</doc>
+<msg timestamp="20240703 20:56:55.155" level="INFO">Getting element with locator: id:1001</msg>
+<msg timestamp="20240703 20:56:55.155" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F6EB82250&gt;, locator='Save As and type:WindowControl', name='Save As', automation_id='', control_type='WindowControl', class_name='#32770', left=320, right=1003, top=121, bottom=601, width=683, height=480, xcenter=661, ycenter=361)</msg>
+<msg timestamp="20240703 20:56:55.155" level="INFO">Locator 'id:1001' produced matcher: MatchObject(locators=[('AutomationId', '1001', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:56:55.420" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.EditControl object at 0x0000020F710A1590&gt;, locator='id:1001', name='File name:', automation_id='1001', control_type='EditControl', class_name='Edit', left=456, right=970, top=490, bottom=507, width=514, height=17, xcenter=713, ycenter=498)</msg>
+<msg timestamp="20240703 20:56:55.420" level="INFO">Sending keys '{BACK}' to element: ControlType: EditControl    ClassName: Edit    AutomationId: 1001    Rect: (456,490,970,507)[514x17]    Name: 'File name:'    Handle: 0xA19A2(661922)</msg>
+<status status="PASS" starttime="20240703 20:56:55.154" endtime="20240703 20:56:55.944"/>
+</kw>
+<kw name="Send Keys" library="RPA.Windows">
+<arg>id:1001</arg>
+<arg>keys=reportdoc</arg>
+<arg>send_enter=${True}</arg>
+<tag>action</tag>
+<tag>keyboard</tag>
+<doc>Send keys to desktop, current window or to Control element
+defined by given locator.</doc>
+<msg timestamp="20240703 20:56:55.946" level="INFO">Getting element with locator: id:1001</msg>
+<msg timestamp="20240703 20:56:55.946" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F6EB82250&gt;, locator='Save As and type:WindowControl', name='Save As', automation_id='', control_type='WindowControl', class_name='#32770', left=320, right=1003, top=121, bottom=601, width=683, height=480, xcenter=661, ycenter=361)</msg>
+<msg timestamp="20240703 20:56:55.947" level="INFO">Locator 'id:1001' produced matcher: MatchObject(locators=[('AutomationId', '1001', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:56:56.188" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.EditControl object at 0x0000020F710A3550&gt;, locator='id:1001', name='File name:', automation_id='1001', control_type='EditControl', class_name='Edit', left=456, right=970, top=490, bottom=507, width=514, height=17, xcenter=713, ycenter=498)</msg>
+<msg timestamp="20240703 20:56:56.190" level="INFO">Sending keys 'reportdoc{Enter}' to element: ControlType: EditControl    ClassName: Edit    AutomationId: 1001    Rect: (456,490,970,507)[514x17]    Name: 'File name:'    Handle: 0xA19A2(661922)</msg>
+<status status="PASS" starttime="20240703 20:56:55.945" endtime="20240703 20:56:56.837"/>
+</kw>
+<kw name="Control Window" library="RPA.Windows">
+<arg>DirectX Diagnostic Tool</arg>
+<tag>window</tag>
+<doc>Controls the window defined by the locator.</doc>
+<msg timestamp="20240703 20:56:56.842" level="INFO">Getting element with locator: DirectX Diagnostic Tool and type:WindowControl</msg>
+<msg timestamp="20240703 20:56:56.842" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x0000020F710C4350&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=1366, top=0, bottom=768, width=1366, height=768, xcenter=683, ycenter=384)</msg>
+<msg timestamp="20240703 20:56:56.843" level="INFO">Locator 'DirectX Diagnostic Tool and type:WindowControl' produced matcher: MatchObject(locators=[('Name', 'DirectX Diagnostic Tool', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
+<msg timestamp="20240703 20:56:56.907" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F71067850&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
+<status status="PASS" starttime="20240703 20:56:56.838" endtime="20240703 20:56:57.408"/>
+</kw>
+<kw name="Close Current Window" library="RPA.Windows">
+<tag>window</tag>
+<doc>Closes current active window or logs a warning message.</doc>
+<msg timestamp="20240703 20:56:57.409" level="INFO">Closing window with name: DirectX Diagnostic Tool (PID: 25988)</msg>
+<status status="PASS" starttime="20240703 20:56:57.408" endtime="20240703 20:56:57.409"/>
+</kw>
+<status status="PASS" starttime="20240703 20:56:51.948" endtime="20240703 20:56:57.410"/>
+</test>
+<status status="PASS" starttime="20240703 20:56:35.740" endtime="20240703 20:56:57.411"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Dxdiagdemo">Dxdiagdemo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
