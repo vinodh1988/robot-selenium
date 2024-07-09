@@ -1,229 +1,1317 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.2 on win32)" generated="20240703 20:56:35.739" rpa="false" schemaversion="4">
-<suite id="s1" name="Dxdiagdemo" source="E:\robot-basics\dxdiagdemo.robot">
-<test id="s1-t1" name="Open Dxdiag and Set Focus" line="9">
-<kw name="Windows Run" library="RPA.Windows">
-<arg>${dxdiag}</arg>
-<tag>window</tag>
-<doc>Use Windows Run window to launch an application.</doc>
-<msg timestamp="20240703 20:56:36.299" level="INFO">Sending keys '{Win}r' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
-<msg timestamp="20240703 20:56:36.849" level="INFO">Sending keys 'dxdiag' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
-<msg timestamp="20240703 20:56:37.451" level="INFO">Sending keys '{Enter}' to element: &lt;module 'uiautomation' from 'E:\\robot-basics\\env\\Lib\\site-packages\\uiautomation\\__init__.py'&gt;</msg>
-<status status="PASS" starttime="20240703 20:56:36.299" endtime="20240703 20:56:40.979"/>
+<robot generator="Robot 6.1.1 (Python 3.11.2 on win32)" generated="20240709 19:50:28.126" rpa="false" schemaversion="4">
+<suite id="s1" name="Manipulateimages" source="E:\robot-basics\manipulateimages.robot">
+<test id="s1-t1" name="PDF Automation" line="5">
+<kw name="Get All Figures" library="RPA.PDF">
+<var>&amp;{figures}</var>
+<arg>E:/reader.pdf</arg>
+<doc>Return all figures in the PDF document.</doc>
+<msg timestamp="20240709 19:50:32.153" level="INFO">&amp;{figures} = { 1={6: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367733F10&gt;} | 2={9: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336778E390&gt;} | 3={39: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233...</msg>
+<status status="PASS" starttime="20240709 19:50:29.423" endtime="20240709 19:50:32.153"/>
 </kw>
-<kw name="Control Window" library="RPA.Windows">
-<arg>DirectX Diagnostic Tool</arg>
-<tag>window</tag>
-<doc>Controls the window defined by the locator.</doc>
-<msg timestamp="20240703 20:56:41.336" level="INFO">Getting element with locator: DirectX Diagnostic Tool and type:WindowControl</msg>
-<msg timestamp="20240703 20:56:41.336" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x0000020F70C16650&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=1366, top=0, bottom=768, width=1366, height=768, xcenter=683, ycenter=384)</msg>
-<msg timestamp="20240703 20:56:41.337" level="INFO">Locator 'DirectX Diagnostic Tool and type:WindowControl' produced matcher: MatchObject(locators=[('Name', 'DirectX Diagnostic Tool', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
-<msg timestamp="20240703 20:56:41.427" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F70C17390&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
-<status status="PASS" starttime="20240703 20:56:40.980" endtime="20240703 20:56:41.928"/>
+<for flavor="IN">
+<var>${key}</var>
+<var>${value}</var>
+<value>&amp;{figures}</value>
+<iter>
+<var name="${key}">1</var>
+<var name="${value}">{6: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367733F10&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.155" level="INFO">Key: 1, Value: {6: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367733F10&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.154" endtime="20240709 19:50:32.155"/>
 </kw>
-<status status="PASS" starttime="20240703 20:56:36.298" endtime="20240703 20:56:41.929"/>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">6</var>
+<var name="${fvalue}">&lt;image src="Im0" width="614" height="794" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.155" endtime="20240709 19:50:32.157"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.155" endtime="20240709 19:50:32.157"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.155" endtime="20240709 19:50:32.158"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.154" endtime="20240709 19:50:32.158"/>
+</iter>
+<iter>
+<var name="${key}">2</var>
+<var name="${value}">{9: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336778E390&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.158" level="INFO">Key: 2, Value: {9: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336778E390&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.158" endtime="20240709 19:50:32.159"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">9</var>
+<var name="${fvalue}">&lt;image src="Im0" width="614" height="591" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.159" endtime="20240709 19:50:32.161"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.159" endtime="20240709 19:50:32.161"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.159" endtime="20240709 19:50:32.161"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.158" endtime="20240709 19:50:32.161"/>
+</iter>
+<iter>
+<var name="${key}">3</var>
+<var name="${value}">{39: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367924C50&gt;, 40: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367924A50&gt;, 41: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367924C90&gt;, 4...</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.162" level="INFO">Key: 3, Value: {39: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367924C50&gt;, 40: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367924A50&gt;, 41: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367924C90&gt;, 42: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367924CD0&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.161" endtime="20240709 19:50:32.162"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">39</var>
+<var name="${fvalue}">&lt;image src="Im0" width="116" height="106" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.162" endtime="20240709 19:50:32.164"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.162" endtime="20240709 19:50:32.164"/>
+</iter>
+<iter>
+<var name="${fkey}">40</var>
+<var name="${fvalue}">&lt;image src="Im1" width="116" height="140" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.165" endtime="20240709 19:50:32.166"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.165" endtime="20240709 19:50:32.166"/>
+</iter>
+<iter>
+<var name="${fkey}">41</var>
+<var name="${fvalue}">&lt;image src="Im2" width="116" height="133" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.166" endtime="20240709 19:50:32.169"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.166" endtime="20240709 19:50:32.169"/>
+</iter>
+<iter>
+<var name="${fkey}">42</var>
+<var name="${fvalue}">&lt;image src="Im3" width="116" height="134" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.169" endtime="20240709 19:50:32.172"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.169" endtime="20240709 19:50:32.172"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.162" endtime="20240709 19:50:32.172"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.161" endtime="20240709 19:50:32.172"/>
+</iter>
+<iter>
+<var name="${key}">4</var>
+<var name="${value}">{3: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336780DFD0&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.173" level="INFO">Key: 4, Value: {3: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336780DFD0&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.172" endtime="20240709 19:50:32.173"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">3</var>
+<var name="${fvalue}">&lt;image src="Im0" width="614" height="609" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.174" endtime="20240709 19:50:32.176"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.173" endtime="20240709 19:50:32.177"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.173" endtime="20240709 19:50:32.177"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.172" endtime="20240709 19:50:32.177"/>
+</iter>
+<iter>
+<var name="${key}">5</var>
+<var name="${value}">{12: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367858A90&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.178" level="INFO">Key: 5, Value: {12: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367858A90&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.177" endtime="20240709 19:50:32.178"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">12</var>
+<var name="${fvalue}">&lt;image src="Im0" width="87" height="609" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.178" endtime="20240709 19:50:32.180"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.178" endtime="20240709 19:50:32.181"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.178" endtime="20240709 19:50:32.181"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.177" endtime="20240709 19:50:32.181"/>
+</iter>
+<iter>
+<var name="${key}">6</var>
+<var name="${value}">{15: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336780DF10&gt;, 16: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336780D610&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.181" level="INFO">Key: 6, Value: {15: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336780DF10&gt;, 16: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336780D610&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.181" endtime="20240709 19:50:32.182"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">15</var>
+<var name="${fvalue}">&lt;image src="Im0" width="280" height="257" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.182" endtime="20240709 19:50:32.184"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.182" endtime="20240709 19:50:32.184"/>
+</iter>
+<iter>
+<var name="${fkey}">16</var>
+<var name="${fvalue}">&lt;image src="Im1" width="328" height="258" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.185" endtime="20240709 19:50:32.186"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.185" endtime="20240709 19:50:32.186"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.182" endtime="20240709 19:50:32.186"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.181" endtime="20240709 19:50:32.186"/>
+</iter>
+<iter>
+<var name="${key}">7</var>
+<var name="${value}">{15: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336780EB90&gt;, 16: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336780EA50&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.188" level="INFO">Key: 7, Value: {15: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336780EB90&gt;, 16: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336780EA50&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.186" endtime="20240709 19:50:32.188"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">15</var>
+<var name="${fvalue}">&lt;image src="Im0" width="313" height="238" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.188" endtime="20240709 19:50:32.189"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.188" endtime="20240709 19:50:32.189"/>
+</iter>
+<iter>
+<var name="${fkey}">16</var>
+<var name="${fvalue}">&lt;image src="Im1" width="299" height="185" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.190" endtime="20240709 19:50:32.191"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.189" endtime="20240709 19:50:32.191"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.188" endtime="20240709 19:50:32.191"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.186" endtime="20240709 19:50:32.191"/>
+</iter>
+<iter>
+<var name="${key}">8</var>
+<var name="${value}">{7: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233678D4210&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.192" level="INFO">Key: 8, Value: {7: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233678D4210&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.192" endtime="20240709 19:50:32.192"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">7</var>
+<var name="${fvalue}">&lt;image src="Im0" width="362" height="449" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.193" endtime="20240709 19:50:32.195"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.193" endtime="20240709 19:50:32.195"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.192" endtime="20240709 19:50:32.195"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.192" endtime="20240709 19:50:32.195"/>
+</iter>
+<iter>
+<var name="${key}">9</var>
+<var name="${value}">{8: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233677324D0&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.196" level="INFO">Key: 9, Value: {8: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233677324D0&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.195" endtime="20240709 19:50:32.196"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">8</var>
+<var name="${fvalue}">&lt;image src="Im0" width="397" height="495" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.198" endtime="20240709 19:50:32.200"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.197" endtime="20240709 19:50:32.201"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.196" endtime="20240709 19:50:32.201"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.195" endtime="20240709 19:50:32.201"/>
+</iter>
+<iter>
+<var name="${key}">10</var>
+<var name="${value}">{11: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233678AC450&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.201" level="INFO">Key: 10, Value: {11: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233678AC450&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.201" endtime="20240709 19:50:32.201"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">11</var>
+<var name="${fvalue}">&lt;image src="Im0" width="420" height="295" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.202" endtime="20240709 19:50:32.203"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.202" endtime="20240709 19:50:32.203"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.201" endtime="20240709 19:50:32.204"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.201" endtime="20240709 19:50:32.204"/>
+</iter>
+<iter>
+<var name="${key}">11</var>
+<var name="${value}">{8: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336775B450&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.204" level="INFO">Key: 11, Value: {8: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336775B450&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.204" endtime="20240709 19:50:32.204"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">8</var>
+<var name="${fvalue}">&lt;image src="Im0" width="410" height="348" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.204" endtime="20240709 19:50:32.206"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.204" endtime="20240709 19:50:32.206"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.204" endtime="20240709 19:50:32.206"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.204" endtime="20240709 19:50:32.206"/>
+</iter>
+<iter>
+<var name="${key}">12</var>
+<var name="${value}">{14: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367C905D0&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.206" level="INFO">Key: 12, Value: {14: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367C905D0&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.206" endtime="20240709 19:50:32.206"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">14</var>
+<var name="${fvalue}">&lt;image src="Im0" width="359" height="282" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.208" endtime="20240709 19:50:32.211"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.207" endtime="20240709 19:50:32.211"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.207" endtime="20240709 19:50:32.211"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.206" endtime="20240709 19:50:32.211"/>
+</iter>
+<iter>
+<var name="${key}">13</var>
+<var name="${value}">{7: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676D8A90&gt;, 8: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676D8A10&gt;, 9: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676D8990&gt;, 10: ...</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.212" level="INFO">Key: 13, Value: {7: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676D8A90&gt;, 8: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676D8A10&gt;, 9: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676D8990&gt;, 10: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676D8950&gt;, 11: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676D9BD0&gt;, 12: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676D8BD0&gt;, 13: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676DAE90&gt;, 14: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676D92D0&gt;, 15: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676D8490&gt;, 16: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676D8410&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.211" endtime="20240709 19:50:32.212"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">7</var>
+<var name="${fvalue}">&lt;image src="Im0" width="97" height="105" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.213" endtime="20240709 19:50:32.214"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.212" endtime="20240709 19:50:32.214"/>
+</iter>
+<iter>
+<var name="${fkey}">8</var>
+<var name="${fvalue}">&lt;image src="Im1" width="97" height="122" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.215" endtime="20240709 19:50:32.216"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.214" endtime="20240709 19:50:32.216"/>
+</iter>
+<iter>
+<var name="${fkey}">9</var>
+<var name="${fvalue}">&lt;image src="Im2" width="97" height="125" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.217" endtime="20240709 19:50:32.218"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.217" endtime="20240709 19:50:32.218"/>
+</iter>
+<iter>
+<var name="${fkey}">10</var>
+<var name="${fvalue}">&lt;image src="Im3" width="147" height="184" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.219" endtime="20240709 19:50:32.221"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.218" endtime="20240709 19:50:32.221"/>
+</iter>
+<iter>
+<var name="${fkey}">11</var>
+<var name="${fvalue}">&lt;image src="Im4" width="97" height="124" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.221" endtime="20240709 19:50:32.223"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.221" endtime="20240709 19:50:32.223"/>
+</iter>
+<iter>
+<var name="${fkey}">12</var>
+<var name="${fvalue}">&lt;image src="Im5" width="140" height="89" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.223" endtime="20240709 19:50:32.225"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.223" endtime="20240709 19:50:32.225"/>
+</iter>
+<iter>
+<var name="${fkey}">13</var>
+<var name="${fvalue}">&lt;image src="Im6" width="97" height="97" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.225" endtime="20240709 19:50:32.227"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.225" endtime="20240709 19:50:32.227"/>
+</iter>
+<iter>
+<var name="${fkey}">14</var>
+<var name="${fvalue}">&lt;image src="Im7" width="145" height="97" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.227" endtime="20240709 19:50:32.228"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.227" endtime="20240709 19:50:32.228"/>
+</iter>
+<iter>
+<var name="${fkey}">15</var>
+<var name="${fvalue}">&lt;image src="Im8" width="87" height="139" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.228" endtime="20240709 19:50:32.230"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.228" endtime="20240709 19:50:32.230"/>
+</iter>
+<iter>
+<var name="${fkey}">16</var>
+<var name="${fvalue}">&lt;image src="Im9" width="97" height="120" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.230" endtime="20240709 19:50:32.232"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.230" endtime="20240709 19:50:32.232"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.212" endtime="20240709 19:50:32.232"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.211" endtime="20240709 19:50:32.232"/>
+</iter>
+<iter>
+<var name="${key}">14</var>
+<var name="${value}">{10: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676BF8D0&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.233" level="INFO">Key: 14, Value: {10: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676BF8D0&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.232" endtime="20240709 19:50:32.233"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">10</var>
+<var name="${fvalue}">&lt;image src="Im0" width="401" height="409" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.233" endtime="20240709 19:50:32.235"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.233" endtime="20240709 19:50:32.235"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.233" endtime="20240709 19:50:32.235"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.232" endtime="20240709 19:50:32.235"/>
+</iter>
+<iter>
+<var name="${key}">15</var>
+<var name="${value}">{8: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233678AC8D0&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.236" level="INFO">Key: 15, Value: {8: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233678AC8D0&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.235" endtime="20240709 19:50:32.236"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">8</var>
+<var name="${fvalue}">&lt;image src="Im0" width="463" height="375" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.236" endtime="20240709 19:50:32.238"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.236" endtime="20240709 19:50:32.238"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.236" endtime="20240709 19:50:32.238"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.235" endtime="20240709 19:50:32.238"/>
+</iter>
+<iter>
+<var name="${key}">16</var>
+<var name="${value}">{}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.239" level="INFO">Key: 16, Value: {}</msg>
+<status status="PASS" starttime="20240709 19:50:32.239" endtime="20240709 19:50:32.239"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}"/>
+<var name="${fvalue}"/>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="NOT RUN" starttime="20240709 19:50:32.240" endtime="20240709 19:50:32.240"/>
+</kw>
+<status status="NOT RUN" starttime="20240709 19:50:32.240" endtime="20240709 19:50:32.240"/>
+</iter>
+<status status="NOT RUN" starttime="20240709 19:50:32.239" endtime="20240709 19:50:32.240"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.239" endtime="20240709 19:50:32.240"/>
+</iter>
+<iter>
+<var name="${key}">17</var>
+<var name="${value}">{2: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233678560D0&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.241" level="INFO">Key: 17, Value: {2: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233678560D0&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.240" endtime="20240709 19:50:32.241"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">2</var>
+<var name="${fvalue}">&lt;image src="Im0" width="615" height="795" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.241" endtime="20240709 19:50:32.243"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.241" endtime="20240709 19:50:32.243"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.241" endtime="20240709 19:50:32.243"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.240" endtime="20240709 19:50:32.243"/>
+</iter>
+<iter>
+<var name="${key}">18</var>
+<var name="${value}">{8: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676BC990&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.244" level="INFO">Key: 18, Value: {8: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676BC990&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.243" endtime="20240709 19:50:32.244"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">8</var>
+<var name="${fvalue}">&lt;image src="Im0" width="371" height="476" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.244" endtime="20240709 19:50:32.246"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.244" endtime="20240709 19:50:32.246"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.244" endtime="20240709 19:50:32.246"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.243" endtime="20240709 19:50:32.246"/>
+</iter>
+<iter>
+<var name="${key}">19</var>
+<var name="${value}">{9: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367926F90&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.247" level="INFO">Key: 19, Value: {9: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367926F90&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.246" endtime="20240709 19:50:32.247"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">9</var>
+<var name="${fvalue}">&lt;image src="Im0" width="409" height="329" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.247" endtime="20240709 19:50:32.248"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.247" endtime="20240709 19:50:32.248"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.247" endtime="20240709 19:50:32.249"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.246" endtime="20240709 19:50:32.249"/>
+</iter>
+<iter>
+<var name="${key}">20</var>
+<var name="${value}">{2: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367685150&gt;, 3: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676845D0&gt;, 4: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367684F10&gt;, 5: &lt;...</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.249" level="INFO">Key: 20, Value: {2: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367685150&gt;, 3: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676845D0&gt;, 4: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367684F10&gt;, 5: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367685090&gt;, 6: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336780C910&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.249" endtime="20240709 19:50:32.250"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">2</var>
+<var name="${fvalue}">&lt;image src="Im0" width="354" height="501" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.250" endtime="20240709 19:50:32.252"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.250" endtime="20240709 19:50:32.252"/>
+</iter>
+<iter>
+<var name="${fkey}">3</var>
+<var name="${fvalue}">&lt;image src="Im1" width="248" height="205" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.252" endtime="20240709 19:50:32.254"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.252" endtime="20240709 19:50:32.254"/>
+</iter>
+<iter>
+<var name="${fkey}">4</var>
+<var name="${fvalue}">&lt;image src="Im2" width="247" height="223" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.254" endtime="20240709 19:50:32.256"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.254" endtime="20240709 19:50:32.256"/>
+</iter>
+<iter>
+<var name="${fkey}">5</var>
+<var name="${fvalue}">&lt;image src="Im3" width="248" height="338" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.256" endtime="20240709 19:50:32.259"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.256" endtime="20240709 19:50:32.259"/>
+</iter>
+<iter>
+<var name="${fkey}">6</var>
+<var name="${fvalue}">&lt;image src="Im4" width="355" height="275" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.259" endtime="20240709 19:50:32.262"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.259" endtime="20240709 19:50:32.262"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.250" endtime="20240709 19:50:32.262"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.249" endtime="20240709 19:50:32.262"/>
+</iter>
+<iter>
+<var name="${key}">21</var>
+<var name="${value}">{}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.263" level="INFO">Key: 21, Value: {}</msg>
+<status status="PASS" starttime="20240709 19:50:32.263" endtime="20240709 19:50:32.263"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}"/>
+<var name="${fvalue}"/>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="NOT RUN" starttime="20240709 19:50:32.264" endtime="20240709 19:50:32.264"/>
+</kw>
+<status status="NOT RUN" starttime="20240709 19:50:32.264" endtime="20240709 19:50:32.264"/>
+</iter>
+<status status="NOT RUN" starttime="20240709 19:50:32.263" endtime="20240709 19:50:32.264"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.262" endtime="20240709 19:50:32.264"/>
+</iter>
+<iter>
+<var name="${key}">22</var>
+<var name="${value}">{8: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676DAB10&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.264" level="INFO">Key: 22, Value: {8: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676DAB10&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.264" endtime="20240709 19:50:32.265"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">8</var>
+<var name="${fvalue}">&lt;image src="Im0" width="363" height="481" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.265" endtime="20240709 19:50:32.266"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.265" endtime="20240709 19:50:32.267"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.265" endtime="20240709 19:50:32.267"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.264" endtime="20240709 19:50:32.267"/>
+</iter>
+<iter>
+<var name="${key}">23</var>
+<var name="${value}">{8: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336785B7D0&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.267" level="INFO">Key: 23, Value: {8: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336785B7D0&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.267" endtime="20240709 19:50:32.267"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">8</var>
+<var name="${fvalue}">&lt;image src="Im0" width="437" height="353" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.268" endtime="20240709 19:50:32.269"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.268" endtime="20240709 19:50:32.269"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.267" endtime="20240709 19:50:32.270"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.267" endtime="20240709 19:50:32.270"/>
+</iter>
+<iter>
+<var name="${key}">24</var>
+<var name="${value}">{8: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676DB290&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.270" level="INFO">Key: 24, Value: {8: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676DB290&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.270" endtime="20240709 19:50:32.270"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">8</var>
+<var name="${fvalue}">&lt;image src="Im0" width="446" height="305" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.271" endtime="20240709 19:50:32.272"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.270" endtime="20240709 19:50:32.272"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.270" endtime="20240709 19:50:32.272"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.270" endtime="20240709 19:50:32.272"/>
+</iter>
+<iter>
+<var name="${key}">25</var>
+<var name="${value}">{13: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336776EBD0&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.273" level="INFO">Key: 25, Value: {13: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336776EBD0&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.272" endtime="20240709 19:50:32.273"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">13</var>
+<var name="${fvalue}">&lt;image src="Im0" width="526" height="263" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.273" endtime="20240709 19:50:32.274"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.273" endtime="20240709 19:50:32.275"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.273" endtime="20240709 19:50:32.275"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.272" endtime="20240709 19:50:32.275"/>
+</iter>
+<iter>
+<var name="${key}">26</var>
+<var name="${value}">{18: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676702D0&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.275" level="INFO">Key: 26, Value: {18: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676702D0&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.275" endtime="20240709 19:50:32.275"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">18</var>
+<var name="${fvalue}">&lt;image src="Im0" width="211" height="233" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.276" endtime="20240709 19:50:32.278"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.275" endtime="20240709 19:50:32.278"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.275" endtime="20240709 19:50:32.278"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.275" endtime="20240709 19:50:32.278"/>
+</iter>
+<iter>
+<var name="${key}">27</var>
+<var name="${value}">{}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.279" level="INFO">Key: 27, Value: {}</msg>
+<status status="PASS" starttime="20240709 19:50:32.278" endtime="20240709 19:50:32.279"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}"/>
+<var name="${fvalue}"/>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="NOT RUN" starttime="20240709 19:50:32.279" endtime="20240709 19:50:32.279"/>
+</kw>
+<status status="NOT RUN" starttime="20240709 19:50:32.279" endtime="20240709 19:50:32.279"/>
+</iter>
+<status status="NOT RUN" starttime="20240709 19:50:32.279" endtime="20240709 19:50:32.279"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.278" endtime="20240709 19:50:32.279"/>
+</iter>
+<iter>
+<var name="${key}">28</var>
+<var name="${value}">{16: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233678550D0&gt;, 17: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367855A50&gt;, 18: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367854F50&gt;, 1...</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.280" level="INFO">Key: 28, Value: {16: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233678550D0&gt;, 17: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367855A50&gt;, 18: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367854F50&gt;, 19: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367854390&gt;, 20: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367856C50&gt;, 21: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367857BD0&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.280" endtime="20240709 19:50:32.280"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">16</var>
+<var name="${fvalue}">&lt;image src="Im0" width="101" height="119" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.280" endtime="20240709 19:50:32.281"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.280" endtime="20240709 19:50:32.282"/>
+</iter>
+<iter>
+<var name="${fkey}">17</var>
+<var name="${fvalue}">&lt;image src="Im1" width="108" height="151" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.282" endtime="20240709 19:50:32.283"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.282" endtime="20240709 19:50:32.283"/>
+</iter>
+<iter>
+<var name="${fkey}">18</var>
+<var name="${fvalue}">&lt;image src="Im2" width="106" height="169" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.283" endtime="20240709 19:50:32.285"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.283" endtime="20240709 19:50:32.285"/>
+</iter>
+<iter>
+<var name="${fkey}">19</var>
+<var name="${fvalue}">&lt;image src="Im3" width="164" height="163" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.285" endtime="20240709 19:50:32.286"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.285" endtime="20240709 19:50:32.286"/>
+</iter>
+<iter>
+<var name="${fkey}">20</var>
+<var name="${fvalue}">&lt;image src="Im4" width="135" height="150" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.286" endtime="20240709 19:50:32.287"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.286" endtime="20240709 19:50:32.289"/>
+</iter>
+<iter>
+<var name="${fkey}">21</var>
+<var name="${fvalue}">&lt;image src="Im5" width="97" height="148" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.289" endtime="20240709 19:50:32.290"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.289" endtime="20240709 19:50:32.290"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.280" endtime="20240709 19:50:32.290"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.279" endtime="20240709 19:50:32.290"/>
+</iter>
+<iter>
+<var name="${key}">29</var>
+<var name="${value}">{12: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336771DB10&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.291" level="INFO">Key: 29, Value: {12: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336771DB10&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.291" endtime="20240709 19:50:32.291"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">12</var>
+<var name="${fvalue}">&lt;image src="Im0" width="353" height="451" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.291" endtime="20240709 19:50:32.293"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.291" endtime="20240709 19:50:32.293"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.291" endtime="20240709 19:50:32.293"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.291" endtime="20240709 19:50:32.293"/>
+</iter>
+<iter>
+<var name="${key}">30</var>
+<var name="${value}">{13: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367927A90&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.294" level="INFO">Key: 30, Value: {13: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367927A90&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.293" endtime="20240709 19:50:32.294"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">13</var>
+<var name="${fvalue}">&lt;image src="Im0" width="321" height="295" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.294" endtime="20240709 19:50:32.295"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.294" endtime="20240709 19:50:32.295"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.294" endtime="20240709 19:50:32.295"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.293" endtime="20240709 19:50:32.295"/>
+</iter>
+<iter>
+<var name="${key}">31</var>
+<var name="${value}">{1: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676BDED0&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.296" level="INFO">Key: 31, Value: {1: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676BDED0&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.295" endtime="20240709 19:50:32.296"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">1</var>
+<var name="${fvalue}">&lt;image src="Im0" width="613" height="676" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.296" endtime="20240709 19:50:32.298"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.296" endtime="20240709 19:50:32.298"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.296" endtime="20240709 19:50:32.298"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.295" endtime="20240709 19:50:32.298"/>
+</iter>
+<iter>
+<var name="${key}">32</var>
+<var name="${value}">{11: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367749FD0&gt;, 12: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676BEF10&gt;, 13: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336774A510&gt;}</var>
+<kw name="Log" library="BuiltIn">
+<arg>Key: ${key}, Value: ${value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240709 19:50:32.299" level="INFO">Key: 32, Value: {11: &lt;RPA.PDF.keywords.model.Figure object at 0x0000023367749FD0&gt;, 12: &lt;RPA.PDF.keywords.model.Figure object at 0x00000233676BEF10&gt;, 13: &lt;RPA.PDF.keywords.model.Figure object at 0x000002336774A510&gt;}</msg>
+<status status="PASS" starttime="20240709 19:50:32.298" endtime="20240709 19:50:32.299"/>
+</kw>
+<for flavor="IN">
+<var>${fkey}</var>
+<var>${fvalue}</var>
+<value>&amp;{value}</value>
+<iter>
+<var name="${fkey}">11</var>
+<var name="${fvalue}">&lt;image src="Im0" width="269" height="242" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.299" endtime="20240709 19:50:32.300"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.299" endtime="20240709 19:50:32.300"/>
+</iter>
+<iter>
+<var name="${fkey}">12</var>
+<var name="${fvalue}">&lt;image src="Im1" width="132" height="265" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.301" endtime="20240709 19:50:32.302"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.301" endtime="20240709 19:50:32.302"/>
+</iter>
+<iter>
+<var name="${fkey}">13</var>
+<var name="${fvalue}">&lt;image src="Im2" width="133" height="265" /&gt;</var>
+<kw name="Save Figure As Image" library="RPA.PDF">
+<arg>figure=${fvalue}</arg>
+<arg>images_folder=e:/robotimages/newone</arg>
+<arg>file_prefix=${fkey}${key}</arg>
+<doc>Try to save the image data from Figure object, and return
+the file name, if successful.</doc>
+<status status="PASS" starttime="20240709 19:50:32.302" endtime="20240709 19:50:32.304"/>
+</kw>
+<status status="PASS" starttime="20240709 19:50:32.302" endtime="20240709 19:50:32.304"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.299" endtime="20240709 19:50:32.304"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:32.298" endtime="20240709 19:50:32.304"/>
+</iter>
+<status status="PASS" starttime="20240709 19:50:32.154" endtime="20240709 19:50:32.304"/>
+</for>
+<status status="PASS" starttime="20240709 19:50:29.422" endtime="20240709 19:50:32.305"/>
 </test>
-<test id="s1-t2" name="Check All the tabs" line="12">
-<kw name="Click" library="RPA.Windows">
-<arg>id:5000</arg>
-<tag>action</tag>
-<tag>mouse</tag>
-<doc>Mouse click on element matching given locator.</doc>
-<msg timestamp="20240703 20:56:41.933" level="INFO">Getting element with locator: id:5000</msg>
-<msg timestamp="20240703 20:56:41.933" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F70C17390&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
-<msg timestamp="20240703 20:56:41.933" level="INFO">Locator 'id:5000' produced matcher: MatchObject(locators=[('AutomationId', '5000', 0)], _classes=set(), max_level=0)</msg>
-<msg timestamp="20240703 20:56:42.094" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.ButtonControl object at 0x0000020F6ECEB490&gt;, locator='id:5000', name='Next Page', automation_id='5000', control_type='ButtonControl', class_name='Button', left=640, right=768, top=587, bottom=610, width=128, height=23, xcenter=704, ycenter=598)</msg>
-<status status="PASS" starttime="20240703 20:56:41.931" endtime="20240703 20:56:42.655"/>
-</kw>
-<kw name="Control Window" library="RPA.Windows">
-<arg>DirectX Diagnostic Tool</arg>
-<tag>window</tag>
-<doc>Controls the window defined by the locator.</doc>
-<msg timestamp="20240703 20:56:42.664" level="INFO">Getting element with locator: DirectX Diagnostic Tool and type:WindowControl</msg>
-<msg timestamp="20240703 20:56:42.665" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x0000020F7105FF10&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=1366, top=0, bottom=768, width=1366, height=768, xcenter=683, ycenter=384)</msg>
-<msg timestamp="20240703 20:56:42.665" level="INFO">Locator 'DirectX Diagnostic Tool and type:WindowControl' produced matcher: MatchObject(locators=[('Name', 'DirectX Diagnostic Tool', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
-<msg timestamp="20240703 20:56:42.754" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F7105A050&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
-<status status="PASS" starttime="20240703 20:56:42.657" endtime="20240703 20:56:43.256"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240703 20:56:48.257" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20240703 20:56:43.257" endtime="20240703 20:56:48.257"/>
-</kw>
-<kw name="Click" library="RPA.Windows">
-<arg>id:5000</arg>
-<tag>action</tag>
-<tag>mouse</tag>
-<doc>Mouse click on element matching given locator.</doc>
-<msg timestamp="20240703 20:56:48.260" level="INFO">Getting element with locator: id:5000</msg>
-<msg timestamp="20240703 20:56:48.260" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F7105A050&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
-<msg timestamp="20240703 20:56:48.260" level="INFO">Locator 'id:5000' produced matcher: MatchObject(locators=[('AutomationId', '5000', 0)], _classes=set(), max_level=0)</msg>
-<msg timestamp="20240703 20:56:48.443" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.ButtonControl object at 0x0000020F71067550&gt;, locator='id:5000', name='Next Page', automation_id='5000', control_type='ButtonControl', class_name='Button', left=640, right=768, top=587, bottom=610, width=128, height=23, xcenter=704, ycenter=598)</msg>
-<status status="PASS" starttime="20240703 20:56:48.259" endtime="20240703 20:56:48.998"/>
-</kw>
-<kw name="Control Window" library="RPA.Windows">
-<arg>DirectX Diagnostic Tool</arg>
-<tag>window</tag>
-<doc>Controls the window defined by the locator.</doc>
-<msg timestamp="20240703 20:56:49.004" level="INFO">Getting element with locator: DirectX Diagnostic Tool and type:WindowControl</msg>
-<msg timestamp="20240703 20:56:49.004" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x0000020F71067F10&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=1366, top=0, bottom=768, width=1366, height=768, xcenter=683, ycenter=384)</msg>
-<msg timestamp="20240703 20:56:49.004" level="INFO">Locator 'DirectX Diagnostic Tool and type:WindowControl' produced matcher: MatchObject(locators=[('Name', 'DirectX Diagnostic Tool', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
-<msg timestamp="20240703 20:56:49.042" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F70525CD0&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
-<status status="PASS" starttime="20240703 20:56:48.999" endtime="20240703 20:56:49.543"/>
-</kw>
-<kw name="Click" library="RPA.Windows">
-<arg>id:5000</arg>
-<tag>action</tag>
-<tag>mouse</tag>
-<doc>Mouse click on element matching given locator.</doc>
-<msg timestamp="20240703 20:56:49.546" level="INFO">Getting element with locator: id:5000</msg>
-<msg timestamp="20240703 20:56:49.546" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F70525CD0&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
-<msg timestamp="20240703 20:56:49.546" level="INFO">Locator 'id:5000' produced matcher: MatchObject(locators=[('AutomationId', '5000', 0)], _classes=set(), max_level=0)</msg>
-<msg timestamp="20240703 20:56:49.645" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.ButtonControl object at 0x0000020F70C17D90&gt;, locator='id:5000', name='Next Page', automation_id='5000', control_type='ButtonControl', class_name='Button', left=640, right=768, top=587, bottom=610, width=128, height=23, xcenter=704, ycenter=598)</msg>
-<status status="PASS" starttime="20240703 20:56:49.544" endtime="20240703 20:56:50.200"/>
-</kw>
-<kw name="Control Window" library="RPA.Windows">
-<arg>DirectX Diagnostic Tool</arg>
-<tag>window</tag>
-<doc>Controls the window defined by the locator.</doc>
-<msg timestamp="20240703 20:56:50.204" level="INFO">Getting element with locator: DirectX Diagnostic Tool and type:WindowControl</msg>
-<msg timestamp="20240703 20:56:50.204" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x0000020F70C169D0&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=1366, top=0, bottom=768, width=1366, height=768, xcenter=683, ycenter=384)</msg>
-<msg timestamp="20240703 20:56:50.204" level="INFO">Locator 'DirectX Diagnostic Tool and type:WindowControl' produced matcher: MatchObject(locators=[('Name', 'DirectX Diagnostic Tool', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
-<msg timestamp="20240703 20:56:50.241" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F71066610&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
-<status status="PASS" starttime="20240703 20:56:50.201" endtime="20240703 20:56:50.742"/>
-</kw>
-<kw name="Click" library="RPA.Windows">
-<arg>id:5000</arg>
-<tag>action</tag>
-<tag>mouse</tag>
-<doc>Mouse click on element matching given locator.</doc>
-<msg timestamp="20240703 20:56:50.744" level="INFO">Getting element with locator: id:5000</msg>
-<msg timestamp="20240703 20:56:50.744" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F71066610&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
-<msg timestamp="20240703 20:56:50.744" level="INFO">Locator 'id:5000' produced matcher: MatchObject(locators=[('AutomationId', '5000', 0)], _classes=set(), max_level=0)</msg>
-<msg timestamp="20240703 20:56:50.838" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.ButtonControl object at 0x0000020F710A0110&gt;, locator='id:5000', name='Next Page', automation_id='5000', control_type='ButtonControl', class_name='Button', left=640, right=768, top=587, bottom=610, width=128, height=23, xcenter=704, ycenter=598)</msg>
-<status status="PASS" starttime="20240703 20:56:50.742" endtime="20240703 20:56:51.393"/>
-</kw>
-<kw name="Control Window" library="RPA.Windows">
-<arg>DirectX Diagnostic Tool</arg>
-<tag>window</tag>
-<doc>Controls the window defined by the locator.</doc>
-<msg timestamp="20240703 20:56:51.396" level="INFO">Getting element with locator: DirectX Diagnostic Tool and type:WindowControl</msg>
-<msg timestamp="20240703 20:56:51.396" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x0000020F710A0750&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=1366, top=0, bottom=768, width=1366, height=768, xcenter=683, ycenter=384)</msg>
-<msg timestamp="20240703 20:56:51.396" level="INFO">Locator 'DirectX Diagnostic Tool and type:WindowControl' produced matcher: MatchObject(locators=[('Name', 'DirectX Diagnostic Tool', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
-<msg timestamp="20240703 20:56:51.443" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F710A0F90&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
-<status status="PASS" starttime="20240703 20:56:51.394" endtime="20240703 20:56:51.944"/>
-</kw>
-<status status="PASS" starttime="20240703 20:56:41.931" endtime="20240703 20:56:51.945"/>
-</test>
-<test id="s1-t3" name="Click Save Information and Create File" line="22">
-<kw name="Click" library="RPA.Windows">
-<arg>id:5001</arg>
-<tag>action</tag>
-<tag>mouse</tag>
-<doc>Mouse click on element matching given locator.</doc>
-<msg timestamp="20240703 20:56:51.950" level="INFO">Getting element with locator: id:5001</msg>
-<msg timestamp="20240703 20:56:51.950" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F710A0F90&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
-<msg timestamp="20240703 20:56:51.950" level="INFO">Locator 'id:5001' produced matcher: MatchObject(locators=[('AutomationId', '5001', 0)], _classes=set(), max_level=0)</msg>
-<msg timestamp="20240703 20:56:52.075" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.ButtonControl object at 0x0000020F710A29D0&gt;, locator='id:5001', name='Save All Information...', automation_id='5001', control_type='ButtonControl', class_name='Button', left=773, right=901, top=587, bottom=610, width=128, height=23, xcenter=837, ycenter=598)</msg>
-<status status="PASS" starttime="20240703 20:56:51.949" endtime="20240703 20:56:52.630"/>
-</kw>
-<kw name="Control Window" library="RPA.Windows">
-<arg>Save As</arg>
-<tag>window</tag>
-<doc>Controls the window defined by the locator.</doc>
-<msg timestamp="20240703 20:56:52.636" level="INFO">Getting element with locator: Save As and type:WindowControl</msg>
-<msg timestamp="20240703 20:56:52.636" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x0000020F710A2C10&gt;, locator='Save As and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=1366, top=0, bottom=768, width=1366, height=768, xcenter=683, ycenter=384)</msg>
-<msg timestamp="20240703 20:56:52.636" level="INFO">Locator 'Save As and type:WindowControl' produced matcher: MatchObject(locators=[('Name', 'Save As', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
-<msg timestamp="20240703 20:56:52.818" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F6EB82250&gt;, locator='Save As and type:WindowControl', name='Save As', automation_id='', control_type='WindowControl', class_name='#32770', left=320, right=1003, top=121, bottom=601, width=683, height=480, xcenter=661, ycenter=361)</msg>
-<status status="PASS" starttime="20240703 20:56:52.630" endtime="20240703 20:56:53.319"/>
-</kw>
-<kw name="Send Keys" library="RPA.Windows">
-<arg>id:1001</arg>
-<arg>E:</arg>
-<arg>send_enter=${True}</arg>
-<tag>action</tag>
-<tag>keyboard</tag>
-<doc>Send keys to desktop, current window or to Control element
-defined by given locator.</doc>
-<msg timestamp="20240703 20:56:53.323" level="INFO">Getting element with locator: id:1001</msg>
-<msg timestamp="20240703 20:56:53.323" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F6EB82250&gt;, locator='Save As and type:WindowControl', name='Save As', automation_id='', control_type='WindowControl', class_name='#32770', left=320, right=1003, top=121, bottom=601, width=683, height=480, xcenter=661, ycenter=361)</msg>
-<msg timestamp="20240703 20:56:53.323" level="INFO">Locator 'id:1001' produced matcher: MatchObject(locators=[('AutomationId', '1001', 0)], _classes=set(), max_level=0)</msg>
-<msg timestamp="20240703 20:56:53.739" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.EditControl object at 0x0000020F7105B350&gt;, locator='id:1001', name='File name:', automation_id='1001', control_type='EditControl', class_name='Edit', left=456, right=970, top=490, bottom=507, width=514, height=17, xcenter=713, ycenter=498)</msg>
-<msg timestamp="20240703 20:56:53.741" level="INFO">Sending keys 'E:{Enter}' to element: ControlType: EditControl    ClassName: Edit    AutomationId: 1001    Rect: (456,490,970,507)[514x17]    Name: 'File name:'    Handle: 0xA19A2(661922)</msg>
-<status status="PASS" starttime="20240703 20:56:53.320" endtime="20240703 20:56:54.304"/>
-</kw>
-<kw name="Send Keys" library="RPA.Windows">
-<arg>id:1001</arg>
-<arg>keys={Ctrl}{a}</arg>
-<tag>action</tag>
-<tag>keyboard</tag>
-<doc>Send keys to desktop, current window or to Control element
-defined by given locator.</doc>
-<msg timestamp="20240703 20:56:54.306" level="INFO">Getting element with locator: id:1001</msg>
-<msg timestamp="20240703 20:56:54.306" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F6EB82250&gt;, locator='Save As and type:WindowControl', name='Save As', automation_id='', control_type='WindowControl', class_name='#32770', left=320, right=1003, top=121, bottom=601, width=683, height=480, xcenter=661, ycenter=361)</msg>
-<msg timestamp="20240703 20:56:54.306" level="INFO">Locator 'id:1001' produced matcher: MatchObject(locators=[('AutomationId', '1001', 0)], _classes=set(), max_level=0)</msg>
-<msg timestamp="20240703 20:56:54.605" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.EditControl object at 0x0000020F710A0D10&gt;, locator='id:1001', name='File name:', automation_id='1001', control_type='EditControl', class_name='Edit', left=456, right=970, top=490, bottom=507, width=514, height=17, xcenter=713, ycenter=498)</msg>
-<msg timestamp="20240703 20:56:54.607" level="INFO">Sending keys '{Ctrl}{a}' to element: ControlType: EditControl    ClassName: Edit    AutomationId: 1001    Rect: (456,490,970,507)[514x17]    Name: 'File name:'    Handle: 0xA19A2(661922)</msg>
-<status status="PASS" starttime="20240703 20:56:54.304" endtime="20240703 20:56:55.153"/>
-</kw>
-<kw name="Send Keys" library="RPA.Windows">
-<arg>id:1001</arg>
-<arg>keys={BACK}</arg>
-<tag>action</tag>
-<tag>keyboard</tag>
-<doc>Send keys to desktop, current window or to Control element
-defined by given locator.</doc>
-<msg timestamp="20240703 20:56:55.155" level="INFO">Getting element with locator: id:1001</msg>
-<msg timestamp="20240703 20:56:55.155" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F6EB82250&gt;, locator='Save As and type:WindowControl', name='Save As', automation_id='', control_type='WindowControl', class_name='#32770', left=320, right=1003, top=121, bottom=601, width=683, height=480, xcenter=661, ycenter=361)</msg>
-<msg timestamp="20240703 20:56:55.155" level="INFO">Locator 'id:1001' produced matcher: MatchObject(locators=[('AutomationId', '1001', 0)], _classes=set(), max_level=0)</msg>
-<msg timestamp="20240703 20:56:55.420" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.EditControl object at 0x0000020F710A1590&gt;, locator='id:1001', name='File name:', automation_id='1001', control_type='EditControl', class_name='Edit', left=456, right=970, top=490, bottom=507, width=514, height=17, xcenter=713, ycenter=498)</msg>
-<msg timestamp="20240703 20:56:55.420" level="INFO">Sending keys '{BACK}' to element: ControlType: EditControl    ClassName: Edit    AutomationId: 1001    Rect: (456,490,970,507)[514x17]    Name: 'File name:'    Handle: 0xA19A2(661922)</msg>
-<status status="PASS" starttime="20240703 20:56:55.154" endtime="20240703 20:56:55.944"/>
-</kw>
-<kw name="Send Keys" library="RPA.Windows">
-<arg>id:1001</arg>
-<arg>keys=reportdoc</arg>
-<arg>send_enter=${True}</arg>
-<tag>action</tag>
-<tag>keyboard</tag>
-<doc>Send keys to desktop, current window or to Control element
-defined by given locator.</doc>
-<msg timestamp="20240703 20:56:55.946" level="INFO">Getting element with locator: id:1001</msg>
-<msg timestamp="20240703 20:56:55.946" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F6EB82250&gt;, locator='Save As and type:WindowControl', name='Save As', automation_id='', control_type='WindowControl', class_name='#32770', left=320, right=1003, top=121, bottom=601, width=683, height=480, xcenter=661, ycenter=361)</msg>
-<msg timestamp="20240703 20:56:55.947" level="INFO">Locator 'id:1001' produced matcher: MatchObject(locators=[('AutomationId', '1001', 0)], _classes=set(), max_level=0)</msg>
-<msg timestamp="20240703 20:56:56.188" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.EditControl object at 0x0000020F710A3550&gt;, locator='id:1001', name='File name:', automation_id='1001', control_type='EditControl', class_name='Edit', left=456, right=970, top=490, bottom=507, width=514, height=17, xcenter=713, ycenter=498)</msg>
-<msg timestamp="20240703 20:56:56.190" level="INFO">Sending keys 'reportdoc{Enter}' to element: ControlType: EditControl    ClassName: Edit    AutomationId: 1001    Rect: (456,490,970,507)[514x17]    Name: 'File name:'    Handle: 0xA19A2(661922)</msg>
-<status status="PASS" starttime="20240703 20:56:55.945" endtime="20240703 20:56:56.837"/>
-</kw>
-<kw name="Control Window" library="RPA.Windows">
-<arg>DirectX Diagnostic Tool</arg>
-<tag>window</tag>
-<doc>Controls the window defined by the locator.</doc>
-<msg timestamp="20240703 20:56:56.842" level="INFO">Getting element with locator: DirectX Diagnostic Tool and type:WindowControl</msg>
-<msg timestamp="20240703 20:56:56.842" level="INFO">Resulted root element: WindowsElement(item=&lt;uiautomation.uiautomation.PaneControl object at 0x0000020F710C4350&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='Desktop 1', automation_id='', control_type='PaneControl', class_name='#32769', left=0, right=1366, top=0, bottom=768, width=1366, height=768, xcenter=683, ycenter=384)</msg>
-<msg timestamp="20240703 20:56:56.843" level="INFO">Locator 'DirectX Diagnostic Tool and type:WindowControl' produced matcher: MatchObject(locators=[('Name', 'DirectX Diagnostic Tool', 0), ('ControlType', 'WindowControl', 0)], _classes=set(), max_level=0)</msg>
-<msg timestamp="20240703 20:56:56.907" level="INFO">Returning element: WindowsElement(item=&lt;uiautomation.uiautomation.WindowControl object at 0x0000020F71067850&gt;, locator='DirectX Diagnostic Tool and type:WindowControl', name='DirectX Diagnostic Tool', automation_id='', control_type='WindowControl', class_name='#32770', left=312, right=1054, top=90, bottom=630, width=742, height=540, xcenter=683, ycenter=360)</msg>
-<status status="PASS" starttime="20240703 20:56:56.838" endtime="20240703 20:56:57.408"/>
-</kw>
-<kw name="Close Current Window" library="RPA.Windows">
-<tag>window</tag>
-<doc>Closes current active window or logs a warning message.</doc>
-<msg timestamp="20240703 20:56:57.409" level="INFO">Closing window with name: DirectX Diagnostic Tool (PID: 25988)</msg>
-<status status="PASS" starttime="20240703 20:56:57.408" endtime="20240703 20:56:57.409"/>
-</kw>
-<status status="PASS" starttime="20240703 20:56:51.948" endtime="20240703 20:56:57.410"/>
-</test>
-<status status="PASS" starttime="20240703 20:56:35.740" endtime="20240703 20:56:57.411"/>
+<status status="PASS" starttime="20240709 19:50:28.129" endtime="20240709 19:50:32.307"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="3" fail="0" skip="0" id="s1" name="Dxdiagdemo">Dxdiagdemo</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Manipulateimages">Manipulateimages</stat>
 </suite>
 </statistics>
 <errors>
